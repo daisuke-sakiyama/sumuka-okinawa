@@ -896,29 +896,3 @@ body.nav-open .fixed-cta {
     padding-bottom: 70px;
   }
 }
-
-/* ========================================
-   スマホ：スクロール時ヘッダー透明化
-   ======================================== */
-@media screen and (max-width: 767px) {
-  .header {
-    transition: background 0.3s, box-shadow 0.3s, border-color 0.3s;
-  }
-
-  .header.scrolled {
-    background: transparent;
-    box-shadow: none;
-    border-bottom-color: transparent;
-  }
-
-  .header.scrolled .logo-main,
-  .header.scrolled .logo-sub {
-    color: #fff;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  }
-
-  .header.scrolled .toggle_btn span {
-    background: #fff;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  }
-}
