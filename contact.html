@@ -156,7 +156,18 @@
 
 <!-- フォーム -->
 <div class="form-card" id="contact-form">
-<h2>お問い合わせフォーム</h2>
+<h2>ご予約・お問い合わせフォーム</h2>
+
+<!-- 注意事項（上部） -->
+<div class="notice-box-top">
+<h4>⚠️ ご予約前にご確認ください</h4>
+<ul>
+<li>繁忙期（3〜4月）は混み合いますので、お早めのご予約をおすすめします</li>
+<li>入居時間は10:00〜17:00までとなります</li>
+<li>時間外は翌日入居となります</li>
+<li>予約確定後のキャンセルはキャンセル料が発生する場合があります</li>
+</ul>
+</div>
 
 <form id="reservationForm" onsubmit="return showConfirm(event)">
 
@@ -300,17 +311,6 @@
 
 </form>
 
-<!-- 注意事項 -->
-<div class="notice-box">
-<h4>⚠️ ご予約・お問い合わせについて</h4>
-<ul>
-<li>予約は3ヶ月前からとなります</li>
-<li>入居時間は10:00〜17:00までとなります</li>
-<li>時間外は翌日入居となります</li>
-<li>定休日：土曜日・日曜日</li>
-<li>ご返信には1〜2営業日いただく場合がございます</li>
-</ul>
-</div>
 
 <!-- 完了メッセージ -->
 <div class="complete-message" id="completeMessage">
@@ -325,26 +325,68 @@
 <!-- サイドバー -->
 <div class="sidebar">
 
-<!-- 電話連絡 -->
-<div class="contact-card">
-<h3>📞 お電話でのお問い合わせ</h3>
-<div class="phone">098-865-5525</div>
-<div class="hours">受付時間：9:00〜18:00</div>
-<div class="hours">定休日：土曜日・日曜日</div>
-<div class="note">お急ぎの場合はお電話でお問い合わせください。</div>
+<!-- お問い合わせ先 -->
+<div class="contact-info-card">
+<h3>お問い合わせ先</h3>
+
+<div class="contact-info-item">
+<div class="contact-info-icon phone-icon">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+</div>
+<div class="contact-info-content">
+<div class="contact-info-label">お電話</div>
+<div class="contact-info-value"><a href="tel:098-865-5525">098-865-5525</a></div>
+</div>
 </div>
 
-<!-- 物件リンク -->
-<div class="property-links">
-<h3>🏢 物件一覧</h3>
-<ul>
-<li><a href="properties/asato.html"><span class="arrow">→</span> SUMUKA 安里駅前</a></li>
-<li><a href="properties/shintoshin2.html"><span class="arrow">→</span> SUMUKA 新都心Ⅱ</a></li>
-<li><a href="properties/shintoshin1.html"><span class="arrow">→</span> SUMUKA 新都心Ⅰ</a></li>
-<li><a href="properties/omoromachi.html"><span class="arrow">→</span> SUMUKA おもろまち</a></li>
-<li><a href="properties/urasoe.html"><span class="arrow">→</span> SUMUKA 浦添</a></li>
-<li><a href="properties/nago_garden.html"><span class="arrow">→</span> NAGO GARDEN</a></li>
-</ul>
+<div class="contact-info-item">
+<div class="contact-info-icon mail-icon">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+</div>
+<div class="contact-info-content">
+<div class="contact-info-label">メール</div>
+<div class="contact-info-value"><a href="mailto:info@sumuka.jp">info@sumuka.jp</a></div>
+</div>
+</div>
+
+<div class="contact-info-item">
+<div class="contact-info-icon location-icon">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+</div>
+<div class="contact-info-content">
+<div class="contact-info-label">所在地</div>
+<div class="contact-info-value">
+〒902-0067<br>
+沖縄県那覇市安里2-9-9
+</div>
+</div>
+</div>
+
+<a href="tel:098-865-5525" class="phone-cta-btn">
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+電話で予約する
+</a>
+</div>
+
+<!-- 営業時間 -->
+<div class="business-hours-card">
+<h3>営業時間</h3>
+
+<div class="hours-table">
+<div class="hours-row">
+<span class="hours-label">月〜金</span>
+<span class="hours-value">9:00 - 18:00</span>
+</div>
+<div class="hours-row">
+<span class="hours-label">定休日</span>
+<span class="hours-value">土曜日・日曜日</span>
+</div>
+</div>
+
+<div class="hours-notes">
+<p>※ 年末年始・GW・お盆期間は休業となる場合がございます。</p>
+<p>※ ご返信には1〜2営業日いただく場合がございます。</p>
+</div>
 </div>
 
 </div>
@@ -476,7 +518,8 @@ function submitForm() {
 // デモ用：完了メッセージを表示
 document.getElementById('confirmModal').classList.remove('active');
 document.getElementById('reservationForm').style.display = 'none';
-document.querySelector('.notice-box').style.display = 'none';
+var noticeBox = document.querySelector('.notice-box-top');
+if (noticeBox) noticeBox.style.display = 'none';
 document.getElementById('completeMessage').classList.add('active');
 document.body.style.overflow = '';
 

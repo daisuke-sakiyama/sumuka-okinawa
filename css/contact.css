@@ -267,3 +267,206 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* ========================================
+   注意ボックス（フォーム上部）
+   ======================================== */
+.notice-box-top {
+  background: #FFF8E5;
+  border: 1px solid #F0D98B;
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-bottom: 28px;
+}
+
+.notice-box-top h4 {
+  font-size: 15px;
+  font-weight: bold;
+  color: #B87B00;
+  margin-bottom: 12px;
+}
+
+.notice-box-top ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.notice-box-top li {
+  font-size: 14px;
+  color: #6B5900;
+  line-height: 1.8;
+}
+
+/* ========================================
+   サイドバー - お問い合わせ先カード
+   ======================================== */
+.contact-info-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.contact-info-card h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #2AACB8;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.contact-info-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-info-icon.phone-icon {
+  background: #E8F7F8;
+  color: #2AACB8;
+}
+
+.contact-info-icon.mail-icon {
+  background: #E8F7F8;
+  color: #2AACB8;
+}
+
+.contact-info-icon.location-icon {
+  background: #FFEEEE;
+  color: #E61E4D;
+}
+
+.contact-info-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.contact-info-content {
+  flex: 1;
+}
+
+.contact-info-label {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.contact-info-value {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.contact-info-value a {
+  color: #2AACB8;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-info-value a:hover {
+  text-decoration: underline;
+}
+
+.phone-cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px 20px;
+  background: #fff;
+  border: 2px solid #2AACB8;
+  border-radius: 8px;
+  color: #2AACB8;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+  margin-top: 8px;
+}
+
+.phone-cta-btn:hover {
+  background: #2AACB8;
+  color: #fff;
+}
+
+.phone-cta-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ========================================
+   サイドバー - 営業時間カード
+   ======================================== */
+.business-hours-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.business-hours-card h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #2AACB8;
+}
+
+.hours-table {
+  margin-bottom: 16px;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.hours-row:last-child {
+  border-bottom: none;
+}
+
+.hours-label {
+  font-size: 14px;
+  color: #666;
+}
+
+.hours-value {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+.hours-notes {
+  background: #f8f8f8;
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.hours-notes p {
+  font-size: 12px;
+  color: #888;
+  line-height: 1.6;
+  margin: 0 0 6px 0;
+}
+
+.hours-notes p:last-child {
+  margin-bottom: 0;
+}
