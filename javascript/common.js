@@ -68,33 +68,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
-
-// スマホ：スクロール時ヘッダー透明化
-(function() {
-  const header = document.querySelector('.header');
-  if (!header) return;
-
-  let lastScrollY = 0;
-  const scrollThreshold = 50; // スクロール量のしきい値
-
-  function handleScroll() {
-    // スマホのみ（767px以下）
-    if (window.innerWidth > 767) {
-      header.classList.remove('scrolled');
-      return;
-    }
-
-    const currentScrollY = window.scrollY;
-
-    if (currentScrollY > scrollThreshold) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-
-    lastScrollY = currentScrollY;
-  }
-
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  window.addEventListener('resize', handleScroll, { passive: true });
-})();
