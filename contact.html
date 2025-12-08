@@ -169,7 +169,7 @@
 </ul>
 </div>
 
-<form id="reservationForm" onsubmit="return showConfirm(event)">
+<form id="reservationForm">
 
 <!-- お問い合わせ種別 -->
 <div class="form-group">
@@ -307,18 +307,9 @@
 </div>
 
 <!-- 送信ボタン -->
-<button type="submit" class="submit-btn">入力内容を確認する</button>
+<button type="submit" class="submit-btn">送信する</button>
 
 </form>
-
-
-<!-- 完了メッセージ -->
-<div class="complete-message" id="completeMessage">
-<div class="icon">✅</div>
-<h2>送信が完了しました</h2>
-<p>お問い合わせいただきありがとうございます。<br>担当者より1〜2営業日以内にご連絡いたします。</p>
-<a href="index.html" class="back-btn">ホームに戻る</a>
-</div>
 
 </div>
 
@@ -394,18 +385,6 @@
 </div>
 </div>
 
-<!-- 確認モーダル -->
-<div class="confirm-modal" id="confirmModal">
-<div class="confirm-content">
-<h3>入力内容の確認</h3>
-<div id="confirmDetails"></div>
-<div class="confirm-buttons">
-<button type="button" class="btn-back" onclick="closeConfirm()">修正する</button>
-<button type="button" class="btn-send" onclick="submitForm()">送信する</button>
-</div>
-</div>
-</div>
-
 <!-- フッター -->
 <footer class="footer">
 <div class="container">
@@ -462,69 +441,6 @@ document.getElementById('navArea').classList.toggle('open');
 
 function closeNav() {
 document.getElementById('navArea').classList.remove('open');
-}
-
-// 確認モーダル表示
-function showConfirm(e) {
-e.preventDefault();
-
-const form = document.getElementById('reservationForm');
-const details = document.getElementById('confirmDetails');
-
-const fields = [
-{ label: 'お問い合わせ種別', id: 'inquiry_type' },
-{ label: 'ご希望の物件', id: 'property' },
-{ label: '部屋タイプ', id: 'room_type' },
-{ label: '滞在タイプ', id: 'stay_type' },
-{ label: '入居日', id: 'checkin' },
-{ label: '退去日', id: 'checkout' },
-{ label: '大人', id: 'adults' },
-{ label: '子供', id: 'children' },
-{ label: 'お名前', id: 'name' },
-{ label: 'フリガナ', id: 'name_kana' },
-{ label: 'メールアドレス', id: 'email' },
-{ label: '電話番号', id: 'phone' },
-{ label: 'お問い合わせ内容', id: 'message' }
-];
-
-let html = '';
-fields.forEach(field => {
-const el = document.getElementById(field.id);
-let value = el.value || '-';
-if (field.id === 'message' && value !== '-') {
-value = value.replace(/\n/g, '<br>');
-}
-html += `<div class="confirm-item"><div class="label">${field.label}</div><div class="value">${value}</div></div>`;
-});
-
-details.innerHTML = html;
-document.getElementById('confirmModal').classList.add('active');
-document.body.style.overflow = 'hidden';
-
-return false;
-}
-
-// 確認モーダルを閉じる
-function closeConfirm() {
-document.getElementById('confirmModal').classList.remove('active');
-document.body.style.overflow = '';
-}
-
-// フォーム送信
-function submitForm() {
-// ここで実際の送信処理を行う
-// 例：fetch APIでサーバーに送信
-
-// デモ用：完了メッセージを表示
-document.getElementById('confirmModal').classList.remove('active');
-document.getElementById('reservationForm').style.display = 'none';
-var noticeBox = document.querySelector('.notice-box-top');
-if (noticeBox) noticeBox.style.display = 'none';
-document.getElementById('completeMessage').classList.add('active');
-document.body.style.overflow = '';
-
-// ページトップへスクロール
-window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 // 日付の最小値を今日に設定
