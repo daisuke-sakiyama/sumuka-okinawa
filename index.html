@@ -43,6 +43,7 @@ a{text-decoration:none;color:inherit}
 .hero-label{font-size:15px;letter-spacing:.25em;margin-bottom:25px;opacity:.95}
 .hero-title{font-size:clamp(30px,5vw,52px);font-weight:400;line-height:1.4;margin-bottom:15px;letter-spacing:.08em}
 body.has-fixed-cta{padding-bottom:80px}
+@media(max-width:767px){#navArea{position:fixed;top:4%;right:7%;opacity:0;visibility:hidden}#navArea.loaded{opacity:1;visibility:visible}}
 </style>
 <!-- Full CSS (deferred) -->
 <link rel="stylesheet" href="css/common.css" media="print" onload="this.media='all'">
@@ -212,7 +213,7 @@ body.has-fixed-cta{padding-bottom:80px}
 <!-- Hero -->
 <main id="main-content">
 <section class="hero" role="banner" aria-label="メインビジュアル">
-  <img src="images/img_mv.jpg" alt="沖縄の美しい海と空" class="hero-img" fetchpriority="high" loading="eager" decoding="async">
+  <img src="images/img_mv.jpg" alt="沖縄の美しい海と空" class="hero-img" width="1920" height="1080" fetchpriority="high" loading="eager" decoding="async">
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="hero-content">
     <h1 class="hero-label">沖縄ウィークリー＆マンスリー</h1>
