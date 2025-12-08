@@ -885,11 +885,14 @@ body.nav-open .fixed-cta {
 @media screen and (max-width: 767px) {
   /* スマホ：スクロール時ヘッダー変化 */
   .header {
-    transition: padding 0.3s ease;
+    transition: padding 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
   }
 
   .header.scrolled {
     padding: 8px 0;
+    background: transparent;
+    box-shadow: none;
+    border-bottom-color: transparent;
   }
 
   /* スクロール時：ロゴを非表示 */
@@ -903,9 +906,35 @@ body.nav-open .fixed-cta {
     transition: opacity 0.3s, visibility 0.3s;
   }
 
-  /* スクロール時：ハンバーガーボタンを黒に */
+  /* スクロール時：ハンバーガーボタンを小さく、線を長く */
+  .header.scrolled .toggle_btn {
+    width: 24px;
+    height: 16px;
+    transition: all 0.3s ease;
+  }
+
+  .toggle_btn {
+    transition: all 0.3s ease;
+  }
+
   .header.scrolled .toggle_btn span {
     background: #333;
+    width: 24px;
+    height: 1.5px;
+  }
+
+  .header.scrolled .toggle_btn span:nth-child(1) {
+    top: 0;
+  }
+
+  .header.scrolled .toggle_btn span:nth-child(2) {
+    top: 7px;
+    width: 24px;
+  }
+
+  .header.scrolled .toggle_btn span:nth-child(3) {
+    top: 14px;
+    width: 24px;
   }
 
   /* 固定CTA表示制御 */
