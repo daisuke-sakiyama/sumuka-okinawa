@@ -43,6 +43,14 @@ a{text-decoration:none;color:inherit}
 .hero-label{font-size:15px;letter-spacing:.25em;margin-bottom:25px;opacity:.95}
 .hero-title{font-size:clamp(30px,5vw,52px);font-weight:400;line-height:1.4;margin-bottom:15px;letter-spacing:.08em}
 body.has-fixed-cta{padding-bottom:80px}
+/* ローディング画面 */
+.loading-screen{position:fixed;top:0;left:0;width:100%;height:100%;background:#fff;z-index:9999;display:flex;align-items:center;justify-content:center;transition:opacity .5s ease,visibility .5s ease}
+.loading-screen.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.loading-logo{font-family:'Cormorant Garamond',Georgia,serif;font-size:36px;font-weight:500;color:#E61E4D;letter-spacing:.15em;animation:pulse 1.5s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+/* 初期状態でコンテンツを非表示 */
+.page-content{opacity:0;transition:opacity .5s ease}
+.page-content.visible{opacity:1}
 @media(max-width:767px){#navArea{position:fixed;top:4%;right:7%;opacity:0;visibility:hidden}#navArea.loaded{opacity:1;visibility:visible}}
 </style>
 <!-- Full CSS (deferred) -->
@@ -57,6 +65,12 @@ body.has-fixed-cta{padding-bottom:80px}
 </head>
 <body class="has-fixed-cta">
 
+<!-- ローディング画面 -->
+<div class="loading-screen" id="loadingScreen">
+  <span class="loading-logo">SUMUKA</span>
+</div>
+
+<div class="page-content" id="pageContent">
 <!-- Skip Navigation -->
 <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
 
@@ -573,15 +587,34 @@ body.has-fixed-cta{padding-bottom:80px}
   </div>
 </footer>
 
-<script src="javascript/common.js" defer></script>
-<script src="javascript/top.js" defer></script>
-
 <!-- 固定CTAボタン -->
 <div class="fixed-cta" role="complementary" aria-label="お問い合わせへのクイックアクセス">
   <div class="fixed-cta-inner">
     <a href="contact.html" class="fixed-cta-btn" aria-label="ご予約・お問い合わせフォームへ">ご予約・お問い合わせはこちら</a>
   </div>
 </div>
+</div><!-- /page-content -->
+
+<script src="javascript/common.js" defer></script>
+<script src="javascript/top.js" defer></script>
+
+<!-- ローディング画面制御 -->
+<script>
+window.addEventListener('load', function() {
+  const loadingScreen = document.getElementById('loadingScreen');
+  const pageContent = document.getElementById('pageContent');
+
+  // ページコンテンツを表示
+  if (pageContent) {
+    pageContent.classList.add('visible');
+  }
+
+  // ローディング画面を非表示
+  if (loadingScreen) {
+    loadingScreen.classList.add('hidden');
+  }
+});
+</script>
 
 </body>
 </html>
