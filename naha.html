@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="沖縄県那覇市のウィークリー・マンスリーマンション。那覇空港から近く、観光にもビジネスにも最適。安里駅前・新都心・おもろまちエリアの物件をご紹介。">
+<meta name="keywords" content="沖縄,那覇,ウィークリーマンション,マンスリーマンション,安里,新都心,おもろまち,短期賃貸,SUMUKA">
+<title>那覇エリアのウィークリー・マンスリーマンション | SUMUKA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/area.css">
+</head>
+<body class="has-fixed-cta">
+
+<!-- ヘッダー -->
+<header class="header">
+<div class="header-inner">
+<a href="index.html" class="logo">
+  <span class="logo-main">SUMUKA</span>
+  <span class="logo-sub">沖縄のウィークリー＆マンスリーで、日常を離れてゆったりSTAY。</span>
+</a>
+<div id="navArea">
+  <div class="toggle_btn" onclick="toggleNav()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav>
+    <div class="inner">
+      
+      <div class="nav-category nav-category-primary">RESERVATION</div>
+      <div class="nav-main-btn">
+        <a href="contact.html">
+          <span class="btn-icon">📩</span>
+          <span>ご予約</span>
+        </a>
+      </div>
+      
+      <hr class="nav-divider">
+      
+      <!-- お部屋タイプ セクション -->
+      <div class="room-type-section">
+        <div class="room-type-header" onclick="toggleRoomType()">お部屋タイプ</div>
+        <div class="room-type-list">
+          
+          <a href="asato.html" class="room-type-item" onclick="closeNav()">
+            <div class="room-type-thumb">写真</div>
+            <div class="room-type-info">
+              <div class="room-type-num"># 01</div>
+              <div class="room-type-area">沖縄／那覇市</div>
+              <div class="room-type-name-ja">安里駅前</div>
+              <div class="room-type-detail">
+                <div class="room-type-capacity">入居人数：1人〜6人</div>
+                <div class="room-type-recommend">駅徒歩2分・1K〜2LDK</div>
+              </div>
+            </div>
+            <div class="room-type-arrow">›</div>
+          </a>
+          
+          <a href="shintoshin2.html" class="room-type-item" onclick="closeNav()">
+            <div class="room-type-thumb">写真</div>
+            <div class="room-type-info">
+              <div class="room-type-num"># 02</div>
+              <div class="room-type-area">沖縄／那覇市</div>
+              <div class="room-type-name-ja">新都心Ⅱ</div>
+              <div class="room-type-detail">
+                <div class="room-type-capacity">入居人数：1人〜3人</div>
+                <div class="room-type-recommend">女性に人気・1K〜1LDK</div>
+              </div>
+            </div>
+            <div class="room-type-arrow">›</div>
+          </a>
+          
+          <a href="shintoshin1.html" class="room-type-item" onclick="closeNav()">
+            <div class="room-type-thumb">写真</div>
+            <div class="room-type-info">
+              <div class="room-type-num"># 03</div>
+              <div class="room-type-area">沖縄／那覇市</div>
+              <div class="room-type-name-ja">新都心Ⅰ</div>
+              <div class="room-type-detail">
+                <div class="room-type-capacity">入居人数：1人〜2人</div>
+                <div class="room-type-recommend">シンプルな1Room</div>
+              </div>
+            </div>
+            <div class="room-type-arrow">›</div>
+          </a>
+          
+          <a href="omoromachi.html" class="room-type-item" onclick="closeNav()">
+            <div class="room-type-thumb">写真</div>
+            <div class="room-type-info">
+              <div class="room-type-num"># 04</div>
+              <div class="room-type-area">沖縄／那覇市</div>
+              <div class="room-type-name-ja">おもろまち</div>
+              <div class="room-type-detail">
+                <div class="room-type-capacity">入居人数：1人〜3人</div>
+                <div class="room-type-recommend">2017年築・駅徒歩6分</div>
+              </div>
+            </div>
+            <div class="room-type-arrow">›</div>
+          </a>
+          
+          <a href="urasoe.html" class="room-type-item" onclick="closeNav()">
+            <div class="room-type-thumb">写真</div>
+            <div class="room-type-info">
+              <div class="room-type-num"># 05</div>
+              <div class="room-type-area">沖縄／浦添市</div>
+              <div class="room-type-name-ja">浦添</div>
+              <div class="room-type-detail">
+                <div class="room-type-capacity">入居人数：1人〜2人</div>
+                <div class="room-type-recommend">最安値・静かな住宅地</div>
+              </div>
+            </div>
+            <div class="room-type-arrow">›</div>
+          </a>
+          
+          <a href="nago_garden.html" class="room-type-item" onclick="closeNav()">
+            <div class="room-type-thumb">写真</div>
+            <div class="room-type-info">
+              <div class="room-type-num"># 06</div>
+              <div class="room-type-area">沖縄／名護市</div>
+              <div class="room-type-name-ja">名護Garden</div>
+              <div class="room-type-detail">
+                <div class="room-type-capacity">入居人数：1人〜10人</div>
+                <div class="room-type-recommend">一棟貸切・3LDK</div>
+              </div>
+            </div>
+            <div class="room-type-arrow">›</div>
+          </a>
+          
+        </div>
+      </div>
+      
+      <hr class="nav-divider">
+      
+      <div class="nav-category">AREA</div>
+      <ul class="nav-list">
+        <li><a href="naha.html" onclick="closeNav()"><span class="arrow-icon">→</span>那覇エリア</a></li>
+        <li><a href="urasoe.html" onclick="closeNav()"><span class="arrow-icon">→</span>浦添エリア</a></li>
+        <li><a href="nago-area.html" onclick="closeNav()"><span class="arrow-icon">→</span>名護エリア</a></li>
+      </ul>
+      
+      <hr class="nav-divider">
+      
+      <div class="nav-category">Room layout</div>
+      <ul class="nav-list">
+        <li><a href="https://www.sumuka.jp/apartment/1k" onclick="closeNav()"><span class="arrow-icon">→</span>1K・1Room</a></li>
+        <li><a href="https://www.sumuka.jp/apartment/1ldk" onclick="closeNav()"><span class="arrow-icon">→</span>1LDK</a></li>
+        <li><a href="https://www.sumuka.jp/apartment/2ldk" onclick="closeNav()"><span class="arrow-icon">→</span>2LDK</a></li>
+        <li><a href="https://www.sumuka.jp/apartment/3ldk" onclick="closeNav()"><span class="arrow-icon">→</span>3LDK</a></li>
+      </ul>
+      
+      <a href="index.html" class="nav-back-home" onclick="closeNav()">
+        <span>←</span>
+        <span>トップページに戻る</span>
+      </a>
+      
+    </div>
+  </nav>
+  <div id="mask" onclick="closeNav()"></div>
+</div>
+</div>
+</header>
+
+<!-- ヒーローセクション -->
+<section class="area-hero">
+  <div class="area-hero-bg"></div>
+  <div class="area-hero-content">
+    <p class="area-hero-label">NAHA AREA</p>
+    <h1 class="area-hero-title">那覇エリア</h1>
+    <div class="area-hero-line"></div>
+    <p class="area-hero-description">
+      沖縄の玄関口、那覇市。<br>
+      空港から近く、観光にもビジネスにも最適なロケーション。<br>
+      国際通りやモノレール沿線で快適な沖縄ライフを。
+    </p>
+    <div class="area-hero-stats">
+      <div class="stat-item">
+        <span class="stat-number">4</span>
+        <span class="stat-label">物件</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number">1K〜2LDK</span>
+        <span class="stat-label">間取り</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number">¥2,500〜</span>
+        <span class="stat-label">1日あたり</span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- エリア紹介セクション -->
+<section class="area-features">
+  <div class="container">
+    <h2 class="section-title">那覇エリアの魅力</h2>
+    <p class="section-subtitle">Why Naha?</p>
+    
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🚃</div>
+        <h3 class="feature-title">交通アクセス抜群</h3>
+        <p class="feature-description">
+          那覇空港からモノレールで約15分。<br>
+          ゆいレール沿線で移動も便利。<br>
+          レンタカーなしでも快適に過ごせます。
+        </p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🛍️</div>
+        <h3 class="feature-title">充実の周辺環境</h3>
+        <p class="feature-description">
+          国際通り、DFS、サンエー那覇メインプレイスなど<br>
+          商業施設が充実。飲食店も多数あり、<br>
+          生活に困ることはありません。
+        </p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🏢</div>
+        <h3 class="feature-title">ビジネス利用に最適</h3>
+        <p class="feature-description">
+          県庁・官公庁エリアへのアクセス良好。<br>
+          出張や長期プロジェクトに最適な<br>
+          ロケーションです。
+        </p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🌺</div>
+        <h3 class="feature-title">観光の拠点に</h3>
+        <p class="feature-description">
+          首里城、波の上ビーチ、壺屋やちむん通りなど<br>
+          観光スポットへのアクセスも便利。<br>
+          沖縄観光の拠点として最適です。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 物件一覧セクション -->
+<section class="area-properties">
+  <div class="container">
+    <h2 class="section-title">那覇エリアの物件</h2>
+    <p class="section-subtitle">Properties in Naha</p>
+    
+    <div class="properties-grid">
+      
+      <!-- 安里駅前 -->
+      <a href="asato.html" class="property-card">
+        <div class="property-image">
+          <div class="property-image-placeholder">写真準備中</div>
+          <span class="property-badge">人気No.1</span>
+        </div>
+        <div class="property-info">
+          <div class="property-location">
+            <span class="location-icon">📍</span>
+            <span>那覇市安里 / 安里駅 徒歩2分</span>
+          </div>
+          <h3 class="property-name">安里駅前</h3>
+          <div class="property-specs">
+            <span>👥 1〜6名</span>
+            <span>🏠 1K〜2LDK</span>
+          </div>
+          <div class="property-price">
+            <span class="price-amount">¥3,300〜</span>
+            <span class="price-unit">/日</span>
+          </div>
+          <div class="property-features">
+            <span class="feature-tag">オートロック</span>
+            <span class="feature-tag">駅近</span>
+            <span class="feature-tag">ファミリー可</span>
+          </div>
+        </div>
+      </a>
+      
+      <!-- 新都心Ⅱ -->
+      <a href="shintoshin2.html" class="property-card">
+        <div class="property-image">
+          <div class="property-image-placeholder">写真準備中</div>
+          <span class="property-badge">女性人気</span>
+        </div>
+        <div class="property-info">
+          <div class="property-location">
+            <span class="location-icon">📍</span>
+            <span>那覇市銘苅 / 古島駅 徒歩2分</span>
+          </div>
+          <h3 class="property-name">新都心Ⅱ</h3>
+          <div class="property-specs">
+            <span>👥 1〜3名</span>
+            <span>🏠 1K〜1LDK</span>
+          </div>
+          <div class="property-price">
+            <span class="price-amount">¥2,750〜</span>
+            <span class="price-unit">/日</span>
+          </div>
+          <div class="property-features">
+            <span class="feature-tag">オートロック</span>
+            <span class="feature-tag">バストイレ別</span>
+            <span class="feature-tag">築浅</span>
+          </div>
+        </div>
+      </a>
+      
+      <!-- 新都心Ⅰ -->
+      <a href="shintoshin1.html" class="property-card">
+        <div class="property-image">
+          <div class="property-image-placeholder">写真準備中</div>
+          <span class="property-badge">リーズナブル</span>
+        </div>
+        <div class="property-info">
+          <div class="property-location">
+            <span class="location-icon">📍</span>
+            <span>那覇市銘苅 / 古島駅 徒歩2分</span>
+          </div>
+          <h3 class="property-name">新都心Ⅰ</h3>
+          <div class="property-specs">
+            <span>👥 1〜2名</span>
+            <span>🏠 1Room</span>
+          </div>
+          <div class="property-price">
+            <span class="price-amount">¥2,500〜</span>
+            <span class="price-unit">/日</span>
+          </div>
+          <div class="property-features">
+            <span class="feature-tag">シンプル</span>
+            <span class="feature-tag">一人暮らし向け</span>
+          </div>
+        </div>
+      </a>
+      
+      <!-- おもろまち -->
+      <a href="omoromachi.html" class="property-card">
+        <div class="property-image">
+          <div class="property-image-placeholder">写真準備中</div>
+          <span class="property-badge">2017年築</span>
+        </div>
+        <div class="property-info">
+          <div class="property-location">
+            <span class="location-icon">📍</span>
+            <span>那覇市おもろまち / おもろまち駅 徒歩6分</span>
+          </div>
+          <h3 class="property-name">おもろまち</h3>
+          <div class="property-specs">
+            <span>👥 1〜3名</span>
+            <span>🏠 1LDK</span>
+          </div>
+          <div class="property-price">
+            <span class="price-amount">¥3,000〜</span>
+            <span class="price-unit">/日</span>
+          </div>
+          <div class="property-features">
+            <span class="feature-tag">築浅</span>
+            <span class="feature-tag">DFS近く</span>
+            <span class="feature-tag">高級感</span>
+          </div>
+        </div>
+      </a>
+      
+    </div>
+  </div>
+</section>
+
+<!-- エリアマップセクション -->
+<section class="area-map">
+  <div class="container">
+    <h2 class="section-title">アクセスマップ</h2>
+    <p class="section-subtitle">Location Map</p>
+    
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57265.77828906373!2d127.6498!3d26.2124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e5697f8b4f7b8f%3A0x4e829f7f7f7f7f7f!2z6YKj6KaH5biC!5e0!3m2!1sja!2sjp!4v1234567890" 
+        width="100%" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    
+    <div class="map-legend">
+      <div class="legend-item">
+        <span class="legend-icon">✈️</span>
+        <span>那覇空港からモノレールで約15分</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-icon">🚃</span>
+        <span>ゆいレール沿線で移動便利</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-icon">🅿️</span>
+        <span>各物件に駐車場あり（有料）</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTAセクション -->
+<section class="area-cta">
+  <div class="container">
+    <h2 class="cta-title">那覇エリアでお部屋をお探しですか？</h2>
+    <p class="cta-description">
+      ご希望の条件やご不明な点など、お気軽にお問い合わせください。<br>
+      スタッフが最適なお部屋をご提案いたします。
+    </p>
+    <div class="cta-buttons">
+      <a href="contact.html" class="cta-btn cta-btn-primary">
+        <span>📩</span>
+        <span>ご予約・お問い合わせ</span>
+      </a>
+      <a href="tel:098-865-5525" class="cta-btn cta-btn-secondary">
+        <span>📞</span>
+        <span>098-865-5525</span>
+      </a>
+    </div>
+    <p class="cta-note">受付時間：9:00〜18:00（日曜定休）</p>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer class="footer">
+<div class="container">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">SUMUKA</div>
+      <p>
+        沖縄ウィークリー・マンスリーマンション<br>
+        2005年創業。那覇市・浦添市・名護市で<br>
+        快適な沖縄滞在をサポートいたします。<br><br>
+        〒902-0067<br>
+        沖縄県那覇市安里2-9-9
+      </p>
+    </div>
+    <div class="footer-links">
+      <h4>MENU</h4>
+      <div class="footer-links-grid"><a href="index.html">お部屋を探す</a>
+      <a href="index.html#stay-plans">滞在プラン</a>
+      <a href="index.html#services">サービス</a>
+      <a href="index.html#concept">コンセプト</a>
+      <a href="contact.html">お問い合わせ</a>
+    </div></div>
+    <div class="footer-links">
+      <h4>PROPERTIES</h4>
+      <div class="footer-links-grid"><a href="asato.html">安里駅前</a>
+      <a href="shintoshin2.html">新都心Ⅱ</a>
+      <a href="shintoshin1.html">新都心Ⅰ</a>
+      <a href="omoromachi.html">おもろまち</a>
+      <a href="urasoe.html">浦添</a>
+      <a href="nago_garden.html">名護Garden</a>
+    </div></div>
+    <div class="footer-links">
+      <h4>AREA</h4>
+      <div class="footer-links-grid"><a href="naha.html">那覇エリア</a>
+      <a href="urasoe-area.html">浦添エリア</a>
+      <a href="nago-area.html">名護エリア</a>
+    </div></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 SUMUKA All Rights Reserved.</p>
+    <p><a href="https://www.sumuka.jp/">www.sumuka.jp</a></p>
+  </div>
+</div>
+</footer>
+
+
+<!-- 固定CTAボタン -->
+<div class="fixed-cta">
+  <div class="fixed-cta-inner">
+    <a href="contact.html" class="fixed-cta-btn">ご予約・お問い合わせはこちら</a>
+  </div>
+</div>
+
+<script src="javascript/common.js"></script>
+</body>
+</html>

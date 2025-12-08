@@ -1,0 +1,631 @@
+/* ========================================
+   物件ページ共通CSS
+   asato, shintoshin1, shintoshin2, omoromachi, urasoe, nago_garden で使用
+   ======================================== */
+
+/* ========================================
+   ヒーロー
+   ======================================== */
+.hero {
+  padding: 24px 0;
+}
+
+.hero h1 {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.hero-meta {
+  color: #717171;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* ========================================
+   ギャラリーセクション
+   ======================================== */
+.gallery-hero {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 200px 200px;
+  gap: 8px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.gallery-hero:hover .show-all-btn {
+  opacity: 1;
+}
+
+.gallery-main {
+  grid-row: span 2;
+}
+
+.gallery-main img,
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-main,
+.gallery-item {
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+}
+
+.show-all-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: #fff;
+  border: 1px solid #222;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+.show-all-btn:hover {
+  background: #f7f7f7;
+}
+
+/* ========================================
+   モーダルギャラリー
+   ======================================== */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.modal.active {
+  display: block;
+}
+
+.modal-header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-close:hover {
+  background: #f7f7f7;
+}
+
+/* ========================================
+   写真ツアーナビ
+   ======================================== */
+.photo-tour-nav {
+  position: sticky;
+  top: 60px;
+  background: #fff;
+  z-index: 9;
+  border-bottom: 1px solid #eee;
+  padding: 0 20px;
+}
+
+.photo-tour-nav-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 15px 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.photo-tour-nav-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-item {
+  flex-shrink: 0;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid #ddd;
+  background: #fff;
+  white-space: nowrap;
+}
+
+.nav-item:hover {
+  background: #f7f7f7;
+}
+
+.nav-item.active {
+  background: #222;
+  color: #fff;
+  border-color: #222;
+}
+
+/* ========================================
+   写真ツアーコンテンツ
+   ======================================== */
+.photo-tour-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.photo-category {
+  margin-bottom: 40px;
+  scroll-margin-top: 130px;
+}
+
+.photo-category h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+}
+
+.photo-category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.photo-category-grid img,
+.photo-category-grid .photo-placeholder {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.photo-category-grid img:hover,
+.photo-category-grid .photo-placeholder:hover {
+  opacity: 0.9;
+}
+
+.photo-placeholder {
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+}
+
+/* ========================================
+   ライトボックス
+   ======================================== */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 10;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-nav:hover {
+  background: #fff;
+}
+
+.lightbox-prev {
+  left: 20px;
+}
+
+.lightbox-next {
+  right: 20px;
+}
+
+.lightbox-counter {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 14px;
+}
+
+/* ========================================
+   メインコンテンツ
+   ======================================== */
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 40px;
+  padding: 40px 0;
+}
+
+/* ========================================
+   セクション
+   ======================================== */
+.section {
+  padding: 24px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+/* ========================================
+   お部屋タイプ
+   ======================================== */
+.room-types {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.room-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+
+.room-card h4 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #E61E4D;
+}
+
+.room-card p {
+  font-size: 13px;
+  color: #666;
+}
+
+/* ========================================
+   設備・アメニティ
+   ======================================== */
+.amenity-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.amenity-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+}
+
+.amenity-icon {
+  font-size: 20px;
+}
+
+/* ========================================
+   料金表
+   ======================================== */
+.price-section {
+  margin-top: 20px;
+}
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+  font-size: 14px;
+}
+
+.price-table th,
+.price-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+.price-table th {
+  background: #f8f8f8;
+  font-weight: 600;
+}
+
+.price-table .plan-title {
+  background: #E61E4D;
+  color: #fff;
+  font-size: 15px;
+}
+
+.price-note {
+  font-size: 12px;
+  color: #666;
+  margin-top: 10px;
+}
+
+/* ========================================
+   予約カード
+   ======================================== */
+.booking-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  position: sticky;
+  top: 90px;
+  background: #fff;
+}
+
+.booking-card .price {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.booking-card .period {
+  font-size: 14px;
+  color: #666;
+}
+
+.date-picker {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 16px 0;
+}
+
+.date-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid #ddd;
+}
+
+.date-input {
+  padding: 12px;
+  border-right: 1px solid #ddd;
+}
+
+.date-input:last-child {
+  border-right: none;
+}
+
+.date-input label {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.date-input span {
+  font-size: 14px;
+  color: #666;
+}
+
+.guests-input {
+  padding: 12px;
+}
+
+.guests-input label {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.guests-input span {
+  font-size: 14px;
+  color: #666;
+}
+
+.reserve-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(to right, #E61E4D, #D70466);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 16px;
+}
+
+.reserve-btn:hover {
+  opacity: 0.9;
+}
+
+.booking-note {
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+  margin-top: 12px;
+}
+
+/* ========================================
+   写真セクション
+   ======================================== */
+.photo-section {
+  padding: 25px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.photo-grid img,
+.photo-grid .photo-placeholder {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+}
+
+.photo-grid img:hover,
+.photo-grid .photo-placeholder:hover {
+  opacity: 0.85;
+}
+
+/* ========================================
+   ホストセクション
+   ======================================== */
+.host-section {
+  padding: 40px 0;
+  border-top: 1px solid #eee;
+}
+
+.host-card {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.host-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #ddd;
+}
+
+.host-info h3 {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.host-info p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* ========================================
+   周辺情報
+   ======================================== */
+.area-info {
+  margin-top: 20px;
+}
+
+.area-item {
+  display: flex;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.area-item:last-child {
+  border-bottom: none;
+}
+
+.area-icon {
+  font-size: 24px;
+}
+
+.area-text h4 {
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.area-text p {
+  font-size: 13px;
+  color: #666;
+}
+
+/* ========================================
+   レスポンシブ
+   ======================================== */
+@media (max-width: 900px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 18px;
+  }
+  
+  .gallery-hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: 250px;
+  }
+  
+  .gallery-item {
+    display: none;
+  }
+}

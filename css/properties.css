@@ -1,0 +1,628 @@
+/* ========================================
+   SUMUKA 物件一覧ページ専用CSS
+   properties.html
+   ======================================== */
+
+/* コンテナ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ========================================
+   ページヘッダー
+   ======================================== */
+.page-header {
+  padding: 120px 0 60px;
+  background: linear-gradient(135deg, #1a3a4a 0%, #2d5a6b 100%);
+  text-align: center;
+  color: #fff;
+}
+
+.page-header-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  letter-spacing: 4px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 10px;
+}
+
+.page-header-title {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.page-header-description {
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ========================================
+   サマリーカード
+   ======================================== */
+.properties-summary {
+  padding: 40px 0;
+  background: #fff;
+  margin-top: -30px;
+  position: relative;
+  z-index: 10;
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+}
+
+.summary-card {
+  text-align: center;
+}
+
+.summary-number {
+  font-size: 24px;
+  font-weight: 700;
+  color: #E61E4D;
+  margin-bottom: 5px;
+}
+
+.summary-label {
+  font-size: 12px;
+  color: #888;
+}
+
+/* ========================================
+   フィルターセクション
+   ======================================== */
+.filter-section {
+  padding: 30px 0;
+  background: #f9f9f9;
+  border-bottom: 1px solid #eee;
+}
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+}
+
+.filter-group select {
+  padding: 10px 35px 10px 15px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23666"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
+  background-size: 16px;
+  appearance: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filter-group select:hover {
+  border-color: #E61E4D;
+}
+
+.filter-group select:focus {
+  outline: none;
+  border-color: #E61E4D;
+  box-shadow: 0 0 0 3px rgba(230, 30, 77, 0.1);
+}
+
+.filter-reset {
+  padding: 10px 20px;
+  font-size: 13px;
+  color: #666;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filter-reset:hover {
+  background: #f5f5f5;
+  border-color: #ccc;
+}
+
+/* ========================================
+   物件一覧グリッド
+   ======================================== */
+.properties-list {
+  padding: 60px 0;
+  background: #f5f5f5;
+}
+
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.property-card {
+  display: block;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.property-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.property-card.hidden {
+  display: none;
+}
+
+.property-image {
+  position: relative;
+  height: 200px;
+  background: #ddd;
+  overflow: hidden;
+}
+
+.property-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667 0%, #888 100%);
+  color: #fff;
+  font-size: 14px;
+}
+
+.property-badges {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.badge {
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 20px;
+  color: #fff;
+}
+
+.badge-popular { background: #E61E4D; }
+.badge-women { background: #ff6b9d; }
+.badge-value { background: #4CAF50; }
+.badge-new { background: #2196F3; }
+.badge-cheap { background: #FF9800; }
+.badge-group { background: #9C27B0; }
+
+.property-content {
+  padding: 20px;
+}
+
+.property-area {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.area-icon {
+  font-size: 12px;
+}
+
+.property-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a3a4a;
+  margin-bottom: 5px;
+}
+
+.property-access {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.property-specs {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.spec-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  color: #555;
+}
+
+.spec-icon {
+  font-size: 14px;
+}
+
+.property-price {
+  margin-bottom: 15px;
+}
+
+.price-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: #E61E4D;
+}
+
+.price-unit {
+  font-size: 13px;
+  color: #888;
+}
+
+.property-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 15px;
+}
+
+.tag {
+  padding: 4px 10px;
+  font-size: 11px;
+  background: #f0f0f0;
+  border-radius: 20px;
+  color: #666;
+}
+
+.property-footer {
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.view-detail {
+  font-size: 13px;
+  color: #E61E4D;
+  font-weight: 500;
+}
+
+.property-card:hover .view-detail {
+  text-decoration: underline;
+}
+
+/* 検索結果なし */
+.no-results {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.no-results p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.no-results button {
+  padding: 12px 30px;
+  font-size: 14px;
+  background: #E61E4D;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.no-results button:hover {
+  background: #D70466;
+}
+
+/* ========================================
+   比較表セクション
+   ======================================== */
+.comparison-section {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #1a3a4a;
+}
+
+.section-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  text-align: center;
+  color: #999;
+  letter-spacing: 3px;
+  margin-bottom: 40px;
+}
+
+.comparison-table-wrapper {
+  overflow-x: auto;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 15px 20px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.comparison-table th {
+  background: #f9f9f9;
+  font-weight: 600;
+  color: #333;
+  white-space: nowrap;
+}
+
+.comparison-table td a {
+  color: #E61E4D;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.comparison-table td a:hover {
+  text-decoration: underline;
+}
+
+.comparison-table tr:hover td {
+  background: #fafafa;
+}
+
+/* ========================================
+   エリアリンクセクション
+   ======================================== */
+.area-links-section {
+  padding: 80px 0;
+  background: #f9f9f9;
+}
+
+.area-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.area-link-card {
+  display: block;
+  padding: 40px 30px;
+  background: #fff;
+  border-radius: 16px;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.area-link-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.area-link-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.area-link-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a3a4a;
+  margin-bottom: 10px;
+}
+
+.area-link-card p {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ========================================
+   CTAセクション
+   ======================================== */
+.cta-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #1a3a4a 0%, #2d5a6b 100%);
+  text-align: center;
+  color: #fff;
+}
+
+.cta-title {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.cta-description {
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 40px;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 40px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.cta-btn-primary {
+  background: #E61E4D;
+  color: #fff;
+}
+
+.cta-btn-primary:hover {
+  background: #D70466;
+  transform: translateY(-2px);
+}
+
+.cta-btn-secondary {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.cta-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.cta-note {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ========================================
+   レスポンシブ
+   ======================================== */
+@media screen and (max-width: 1024px) {
+  .properties-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+  
+  .page-header {
+    padding: 100px 0 50px;
+  }
+  
+  .page-header-title {
+    font-size: 28px;
+  }
+  
+  .summary-cards {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px;
+  }
+  
+  .filter-bar {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .filter-group {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .filter-group select {
+    flex: 1;
+  }
+  
+  .filter-reset {
+    width: 100%;
+  }
+  
+  .properties-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .property-image {
+    height: 180px;
+  }
+  
+  .comparison-table {
+    font-size: 12px;
+  }
+  
+  .comparison-table th,
+  .comparison-table td {
+    padding: 10px 12px;
+  }
+  
+  .area-links-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .area-link-card {
+    padding: 30px 20px;
+  }
+  
+  .cta-title {
+    font-size: 22px;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .summary-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .summary-number {
+    font-size: 20px;
+  }
+  
+  .property-name {
+    font-size: 18px;
+  }
+  
+  .price-value {
+    font-size: 20px;
+  }
+}

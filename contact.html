@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SUMUKA沖縄ウィークリー・マンスリーマンションのお問い合わせ・ご予約フォーム。安里駅前、新都心、浦添などの物件へのご予約・お問い合わせはこちら。">
+<meta name="keywords" content="沖縄,那覇,ウィークリーマンション,マンスリーマンション,予約,お問い合わせ,SUMUKA">
+<title>お問い合わせ・ご予約 - SUMUKA沖縄ウィークリー・マンスリーマンション</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="header">
+<div class="header-inner">
+<a href="index.html" class="logo">
+      <span class="logo-main">SUMUKA</span>
+      <span class="logo-sub">沖縄のウィークリー＆マンスリーで、日常を離れてゆったりSTAY。</span>
+    </a>
+<div id="navArea">
+<div class="toggle_btn" onclick="toggleNav()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<nav>
+<div class="inner">
+<div class="nav-category nav-category-primary">RESERVATION</div>
+<div class="nav-main-btn">
+<a href="#contact-form">
+<span class="btn-icon">📩</span>
+<span>ご予約</span>
+</a>
+</div>
+<hr class="nav-divider">
+
+<!-- お部屋タイプ セクション -->
+<div class="room-type-section">
+<div class="room-type-header" onclick="toggleRoomType()">お部屋タイプ</div>
+<div class="room-type-list">
+
+<a href="asato.html" class="room-type-item" onclick="closeNav()">
+<div class="room-type-thumb">写真</div>
+<div class="room-type-info">
+<div class="room-type-num"># 01</div>
+<div class="room-type-area">沖縄／那覇市</div>
+<div class="room-type-name-ja">安里駅前</div>
+<div class="room-type-detail">
+<div class="room-type-capacity">入居人数：1人〜6人</div>
+<div class="room-type-recommend">駅徒歩2分・1K〜2LDK</div>
+</div>
+</div>
+<div class="room-type-arrow">›</div>
+</a>
+
+<a href="shintoshin2.html" class="room-type-item" onclick="closeNav()">
+<div class="room-type-thumb">写真</div>
+<div class="room-type-info">
+<div class="room-type-num"># 02</div>
+<div class="room-type-area">沖縄／那覇市</div>
+<div class="room-type-name-ja">新都心Ⅱ</div>
+<div class="room-type-detail">
+<div class="room-type-capacity">入居人数：1人〜3人</div>
+<div class="room-type-recommend">女性に人気・1K〜1LDK</div>
+</div>
+</div>
+<div class="room-type-arrow">›</div>
+</a>
+
+<a href="shintoshin1.html" class="room-type-item" onclick="closeNav()">
+<div class="room-type-thumb">写真</div>
+<div class="room-type-info">
+<div class="room-type-num"># 03</div>
+<div class="room-type-area">沖縄／那覇市</div>
+<div class="room-type-name-ja">新都心Ⅰ</div>
+<div class="room-type-detail">
+<div class="room-type-capacity">入居人数：1人〜2人</div>
+<div class="room-type-recommend">シンプルな1Room</div>
+</div>
+</div>
+<div class="room-type-arrow">›</div>
+</a>
+
+<a href="omoromachi.html" class="room-type-item" onclick="closeNav()">
+<div class="room-type-thumb">写真</div>
+<div class="room-type-info">
+<div class="room-type-num"># 04</div>
+<div class="room-type-area">沖縄／那覇市</div>
+<div class="room-type-name-ja">おもろまち</div>
+<div class="room-type-detail">
+<div class="room-type-capacity">入居人数：1人〜3人</div>
+<div class="room-type-recommend">2017年築・駅徒歩6分</div>
+</div>
+</div>
+<div class="room-type-arrow">›</div>
+</a>
+
+<a href="urasoe.html" class="room-type-item" onclick="closeNav()">
+<div class="room-type-thumb">写真</div>
+<div class="room-type-info">
+<div class="room-type-num"># 05</div>
+<div class="room-type-area">沖縄／浦添市</div>
+<div class="room-type-name-ja">浦添</div>
+<div class="room-type-detail">
+<div class="room-type-capacity">入居人数：1人〜2人</div>
+<div class="room-type-recommend">最安値・静かな住宅地</div>
+</div>
+</div>
+<div class="room-type-arrow">›</div>
+</a>
+
+<a href="nago_garden.html" class="room-type-item" onclick="closeNav()">
+<div class="room-type-thumb">写真</div>
+<div class="room-type-info">
+<div class="room-type-num"># 06</div>
+<div class="room-type-area">沖縄／名護市</div>
+<div class="room-type-name-ja">名護Garden</div>
+<div class="room-type-detail">
+<div class="room-type-capacity">入居人数：1人〜10人</div>
+<div class="room-type-recommend">一棟貸切・3LDK</div>
+</div>
+</div>
+<div class="room-type-arrow">›</div>
+</a>
+
+</div>
+</div>
+
+<a href="index.html" class="nav-back-home" onclick="closeNav()">
+<span>←</span>
+<span>トップページに戻る</span>
+</a>
+
+</div>
+</nav>
+<div id="mask" onclick="closeNav()"></div>
+</div>
+</div>
+</header>
+
+<!-- ページヒーロー -->
+<section class="page-hero">
+<div class="container">
+<h1>📩 ご予約・お問い合わせ</h1>
+<p>ご質問・ご予約はこちらのフォームからお気軽にどうぞ</p>
+</div>
+</section>
+
+<!-- メインコンテンツ -->
+<div class="container">
+<div class="main-content">
+
+<!-- フォーム -->
+<div class="form-card" id="contact-form">
+<h2>お問い合わせフォーム</h2>
+
+<form id="reservationForm" onsubmit="return showConfirm(event)">
+
+<!-- お問い合わせ種別 -->
+<div class="form-group">
+<label>お問い合わせ種別<span class="required">必須</span></label>
+<select name="inquiry_type" id="inquiry_type" required>
+<option value="">選択してください</option>
+<option value="予約">ご予約</option>
+<option value="空室確認">空室確認</option>
+<option value="料金確認">料金のお問い合わせ</option>
+<option value="見学希望">見学希望</option>
+<option value="その他">その他のお問い合わせ</option>
+</select>
+</div>
+
+<!-- 物件選択 -->
+<div class="form-group">
+<label>ご希望の物件<span class="required">必須</span></label>
+<select name="property" id="property" required>
+<option value="">選択してください</option>
+<option value="SUMUKA 安里駅前">SUMUKA 安里駅前（那覇市）</option>
+<option value="SUMUKA 新都心Ⅱ">SUMUKA 新都心Ⅱ（那覇市）</option>
+<option value="SUMUKA 新都心Ⅰ">SUMUKA 新都心Ⅰ（那覇市）</option>
+<option value="SUMUKA おもろまち">SUMUKA おもろまち（那覇市）</option>
+<option value="SUMUKA 浦添">SUMUKA 浦添（浦添市）</option>
+<option value="NAGO GARDEN">NAGO GARDEN（名護市）</option>
+<option value="未定・相談したい">未定・相談したい</option>
+</select>
+</div>
+
+<!-- 部屋タイプ -->
+<div class="form-group">
+<label>ご希望の部屋タイプ</label>
+<select name="room_type" id="room_type">
+<option value="">選択してください</option>
+<option value="1K">1K</option>
+<option value="1DK">1DK</option>
+<option value="1LDK">1LDK</option>
+<option value="2LDK">2LDK</option>
+<option value="3LDK">3LDK</option>
+<option value="未定・相談したい">未定・相談したい</option>
+</select>
+</div>
+
+<!-- 滞在タイプ -->
+<div class="form-group">
+<label>滞在タイプ</label>
+<select name="stay_type" id="stay_type">
+<option value="">選択してください</option>
+<option value="ショートステイ（1泊〜）">ショートステイ（1泊〜）</option>
+<option value="ミドルステイ（6泊〜30泊未満）">ミドルステイ（6泊〜30泊未満）</option>
+<option value="ロングステイ（1ヶ月〜）">ロングステイ（1ヶ月〜）</option>
+<option value="未定・相談したい">未定・相談したい</option>
+</select>
+</div>
+
+<!-- 入居日・退去日 -->
+<div class="form-group">
+<label>ご希望の入居日・退去日</label>
+<div class="date-group">
+<div>
+<input type="date" name="checkin" id="checkin" placeholder="入居日">
+<p class="hint">入居希望日</p>
+</div>
+<div>
+<input type="date" name="checkout" id="checkout" placeholder="退去日">
+<p class="hint">退去希望日</p>
+</div>
+</div>
+</div>
+
+<!-- 人数 -->
+<div class="form-group">
+<label>ご利用人数</label>
+<div class="guests-group">
+<div>
+<select name="adults" id="adults">
+<option value="">大人</option>
+<option value="1">大人 1名</option>
+<option value="2">大人 2名</option>
+<option value="3">大人 3名</option>
+<option value="4">大人 4名</option>
+<option value="5">大人 5名</option>
+<option value="6">大人 6名</option>
+</select>
+</div>
+<div>
+<select name="children" id="children">
+<option value="">子供</option>
+<option value="0">子供 0名</option>
+<option value="1">子供 1名</option>
+<option value="2">子供 2名</option>
+<option value="3">子供 3名</option>
+<option value="4">子供 4名</option>
+</select>
+</div>
+</div>
+</div>
+
+<hr style="border:none;border-top:1px dashed #ddd;margin:32px 0;">
+
+<!-- お名前 -->
+<div class="form-group">
+<label>お名前<span class="required">必須</span></label>
+<input type="text" name="name" id="name" placeholder="例：山田 太郎" required>
+</div>
+
+<!-- フリガナ -->
+<div class="form-group">
+<label>フリガナ<span class="required">必須</span></label>
+<input type="text" name="name_kana" id="name_kana" placeholder="例：ヤマダ タロウ" required>
+</div>
+
+<!-- メールアドレス -->
+<div class="form-group">
+<label>メールアドレス<span class="required">必須</span></label>
+<input type="email" name="email" id="email" placeholder="例：example@email.com" required>
+</div>
+
+<!-- 電話番号 -->
+<div class="form-group">
+<label>電話番号<span class="required">必須</span></label>
+<input type="tel" name="phone" id="phone" placeholder="例：090-1234-5678" required>
+</div>
+
+<!-- お問い合わせ内容 -->
+<div class="form-group">
+<label>お問い合わせ内容・ご要望</label>
+<textarea name="message" id="message" placeholder="ご質問やご要望がございましたらご記入ください"></textarea>
+</div>
+
+<!-- プライバシーポリシー同意 -->
+<div class="privacy-check">
+<input type="checkbox" id="privacy" required>
+<label for="privacy"><a href="https://www.sumuka.jp/privacy" target="_blank">プライバシーポリシー</a>に同意する</label>
+</div>
+
+<!-- 送信ボタン -->
+<button type="submit" class="submit-btn">入力内容を確認する</button>
+
+</form>
+
+<!-- 注意事項 -->
+<div class="notice-box">
+<h4>⚠️ ご予約・お問い合わせについて</h4>
+<ul>
+<li>予約は3ヶ月前からとなります</li>
+<li>入居時間は10:00〜17:00までとなります</li>
+<li>時間外は翌日入居となります</li>
+<li>定休日：土曜日・日曜日</li>
+<li>ご返信には1〜2営業日いただく場合がございます</li>
+</ul>
+</div>
+
+<!-- 完了メッセージ -->
+<div class="complete-message" id="completeMessage">
+<div class="icon">✅</div>
+<h2>送信が完了しました</h2>
+<p>お問い合わせいただきありがとうございます。<br>担当者より1〜2営業日以内にご連絡いたします。</p>
+<a href="index.html" class="back-btn">ホームに戻る</a>
+</div>
+
+</div>
+
+<!-- サイドバー -->
+<div class="sidebar">
+
+<!-- 電話連絡 -->
+<div class="contact-card">
+<h3>📞 お電話でのお問い合わせ</h3>
+<div class="phone">098-865-5525</div>
+<div class="hours">受付時間：9:00〜18:00</div>
+<div class="hours">定休日：土曜日・日曜日</div>
+<div class="note">お急ぎの場合はお電話でお問い合わせください。</div>
+</div>
+
+<!-- 物件リンク -->
+<div class="property-links">
+<h3>🏢 物件一覧</h3>
+<ul>
+<li><a href="asato.html"><span class="arrow">→</span> SUMUKA 安里駅前</a></li>
+<li><a href="shintoshin2.html"><span class="arrow">→</span> SUMUKA 新都心Ⅱ</a></li>
+<li><a href="shintoshin1.html"><span class="arrow">→</span> SUMUKA 新都心Ⅰ</a></li>
+<li><a href="omoromachi.html"><span class="arrow">→</span> SUMUKA おもろまち</a></li>
+<li><a href="urasoe.html"><span class="arrow">→</span> SUMUKA 浦添</a></li>
+<li><a href="nago_garden.html"><span class="arrow">→</span> NAGO GARDEN</a></li>
+</ul>
+</div>
+
+</div>
+
+</div>
+</div>
+
+<!-- 確認モーダル -->
+<div class="confirm-modal" id="confirmModal">
+<div class="confirm-content">
+<h3>入力内容の確認</h3>
+<div id="confirmDetails"></div>
+<div class="confirm-buttons">
+<button type="button" class="btn-back" onclick="closeConfirm()">修正する</button>
+<button type="button" class="btn-send" onclick="submitForm()">送信する</button>
+</div>
+</div>
+</div>
+
+<!-- フッター -->
+<footer class="footer">
+<div class="container">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">SUMUKA</div>
+      <p>
+        沖縄ウィークリー・マンスリーマンション<br>
+        2005年創業。那覇市・浦添市・名護市で<br>
+        快適な沖縄滞在をサポートいたします。<br><br>
+        〒902-0067<br>
+        沖縄県那覇市安里2-9-9
+      </p>
+    </div>
+    <div class="footer-links">
+      <h4>MENU</h4>
+      <div class="footer-links-grid"><a href="index.html">お部屋を探す</a>
+      <a href="index.html#stay-plans">滞在プラン</a>
+      <a href="index.html#services">サービス</a>
+      <a href="index.html#concept">コンセプト</a>
+      <a href="contact.html">お問い合わせ</a>
+    </div></div>
+    <div class="footer-links">
+      <h4>PROPERTIES</h4>
+      <div class="footer-links-grid"><a href="asato.html">安里駅前</a>
+      <a href="shintoshin2.html">新都心Ⅱ</a>
+      <a href="shintoshin1.html">新都心Ⅰ</a>
+      <a href="omoromachi.html">おもろまち</a>
+      <a href="urasoe.html">浦添</a>
+      <a href="nago_garden.html">名護Garden</a>
+    </div></div>
+    <div class="footer-links">
+      <h4>SEARCH</h4>
+      <div class="footer-links-grid"><a href="naha.html">那覇エリア</a>
+      <a href="urasoe-area.html">浦添エリア</a>
+      <a href="https://www.sumuka.jp/apartment/1k">1K・1Room</a>
+      <a href="https://www.sumuka.jp/apartment/1ldk">1LDK</a>
+      <a href="https://www.sumuka.jp/apartment/2ldk">2LDK</a>
+      <a href="https://www.sumuka.jp/apartment/3ldk">3LDK</a>
+    </div></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 SUMUKA All Rights Reserved.</p>
+    <p><a href="https://www.sumuka.jp/">www.sumuka.jp</a></p>
+  </div>
+</div>
+</footer>
+
+<script>
+// スライドナビゲーション
+function toggleNav() {
+document.getElementById('navArea').classList.toggle('open');
+}
+
+function closeNav() {
+document.getElementById('navArea').classList.remove('open');
+}
+
+// 確認モーダル表示
+function showConfirm(e) {
+e.preventDefault();
+
+const form = document.getElementById('reservationForm');
+const details = document.getElementById('confirmDetails');
+
+const fields = [
+{ label: 'お問い合わせ種別', id: 'inquiry_type' },
+{ label: 'ご希望の物件', id: 'property' },
+{ label: '部屋タイプ', id: 'room_type' },
+{ label: '滞在タイプ', id: 'stay_type' },
+{ label: '入居日', id: 'checkin' },
+{ label: '退去日', id: 'checkout' },
+{ label: '大人', id: 'adults' },
+{ label: '子供', id: 'children' },
+{ label: 'お名前', id: 'name' },
+{ label: 'フリガナ', id: 'name_kana' },
+{ label: 'メールアドレス', id: 'email' },
+{ label: '電話番号', id: 'phone' },
+{ label: 'お問い合わせ内容', id: 'message' }
+];
+
+let html = '';
+fields.forEach(field => {
+const el = document.getElementById(field.id);
+let value = el.value || '-';
+if (field.id === 'message' && value !== '-') {
+value = value.replace(/\n/g, '<br>');
+}
+html += `<div class="confirm-item"><div class="label">${field.label}</div><div class="value">${value}</div></div>`;
+});
+
+details.innerHTML = html;
+document.getElementById('confirmModal').classList.add('active');
+document.body.style.overflow = 'hidden';
+
+return false;
+}
+
+// 確認モーダルを閉じる
+function closeConfirm() {
+document.getElementById('confirmModal').classList.remove('active');
+document.body.style.overflow = '';
+}
+
+// フォーム送信
+function submitForm() {
+// ここで実際の送信処理を行う
+// 例：fetch APIでサーバーに送信
+
+// デモ用：完了メッセージを表示
+document.getElementById('confirmModal').classList.remove('active');
+document.getElementById('reservationForm').style.display = 'none';
+document.querySelector('.notice-box').style.display = 'none';
+document.getElementById('completeMessage').classList.add('active');
+document.body.style.overflow = '';
+
+// ページトップへスクロール
+window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// 日付の最小値を今日に設定
+document.addEventListener('DOMContentLoaded', function() {
+const today = new Date().toISOString().split('T')[0];
+document.getElementById('checkin').min = today;
+document.getElementById('checkout').min = today;
+
+// 入居日が変更されたら退去日の最小値を更新
+document.getElementById('checkin').addEventListener('change', function() {
+document.getElementById('checkout').min = this.value;
+});
+});
+</script>
+
+<script src="javascript/common.js"></script>
+</body>
+</html>
