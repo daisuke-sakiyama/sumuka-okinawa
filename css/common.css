@@ -124,24 +124,6 @@ textarea:focus {
   position: sticky;
   top: 0;
   z-index: 100;
-  transition: padding 0.3s ease;
-}
-
-.header.scrolled {
-  padding: 6px 0;
-}
-
-.header.scrolled .logo-main {
-  font-size: 24px;
-}
-
-.header.scrolled .logo-sub {
-  font-size: 10px;
-}
-
-.logo-main,
-.logo-sub {
-  transition: font-size 0.3s ease;
 }
 
 .header-inner {
@@ -229,7 +211,7 @@ textarea:focus {
   right: 0;
   width: 30px;
   height: 2px;
-  background: linear-gradient(135deg, #E61E4D 0%, #D70466 100%);
+  background: #333;
   transition: all 0.5s;
 }
 
@@ -901,6 +883,29 @@ body.nav-open .fixed-cta {
 }
 
 @media screen and (max-width: 767px) {
+  /* ヘッダー縮小（スマホのみ） */
+  .header {
+    transition: padding 0.3s ease;
+  }
+
+  .header.scrolled {
+    padding: 6px 0;
+  }
+
+  .header.scrolled .logo-main {
+    font-size: 24px;
+  }
+
+  .header.scrolled .logo-sub {
+    font-size: 10px;
+  }
+
+  .logo-main,
+  .logo-sub {
+    transition: font-size 0.3s ease;
+  }
+
+  /* 固定CTA表示制御 */
   .fixed-cta {
     padding: 10px 15px;
     opacity: 0;
