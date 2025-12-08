@@ -914,6 +914,14 @@ body.nav-open {
     transition: opacity 0.3s, visibility 0.3s;
   }
 
+  .logo-main {
+    font-size: 22px;
+  }
+
+  .logo-sub {
+    font-size: 9px;
+  }
+
   /* ハンバーガーボタン - 初期非表示 */
   #navArea {
     position: fixed;
