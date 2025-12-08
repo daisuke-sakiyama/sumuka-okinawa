@@ -38,8 +38,13 @@ a {
 /* スキップリンク（アクセシビリティ） */
 .skip-link {
   position: absolute;
-  top: -40px;
-  left: 0;
+  top: -100%;
+  left: -100%;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
   background: #E61E4D;
   color: #fff;
   padding: 10px 20px;
@@ -47,11 +52,17 @@ a {
   font-weight: 600;
   text-decoration: none;
   border-radius: 0 0 8px 0;
-  transition: top 0.3s;
 }
 
 .skip-link:focus {
+  position: fixed;
   top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
 }
 
 /* フォーカススタイル（アクセシビリティ） */
