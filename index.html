@@ -17,13 +17,47 @@
 <!-- Google Fonts - optimized with display=swap -->
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:wght@400;500&display=swap"></noscript>
-<!-- Critical CSS -->
+<!-- Critical CSS (inline for faster FCP) -->
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;font-weight:300;color:#333;line-height:1.8;background:#fff;letter-spacing:.05em}
+img{max-width:100%;height:auto;display:block}
+a{text-decoration:none;color:inherit}
+.skip-link{position:absolute;top:-40px;left:0;background:#E61E4D;color:#fff;padding:10px 20px;z-index:10000;font-weight:600;border-radius:0 0 8px 0}
+.skip-link:focus{top:0}
+.header{position:fixed;top:0;left:0;right:0;z-index:100;padding:15px 40px;background:rgba(255,255,255,.98);box-shadow:0 2px 30px rgba(0,0,0,.08)}
+.header-inner{max-width:1200px;display:flex;justify-content:space-between;align-items:center}
+.logo{display:flex;flex-direction:column;align-items:flex-start;gap:0}
+.logo-main{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:500;color:#E61E4D;letter-spacing:.15em}
+.logo-sub{font-size:10px;color:#666;letter-spacing:.1em;margin-top:2px}
+.toggle_btn{display:block;position:relative;width:30px;height:22px;cursor:pointer;z-index:1002;background:transparent;border:none;padding:0}
+.toggle_btn span{display:block;position:absolute;right:0;width:30px;height:2px;background:linear-gradient(135deg,#E61E4D,#D70466)}
+.toggle_btn span:nth-child(1){top:0}
+.toggle_btn span:nth-child(2){top:10px;width:20px}
+.toggle_btn span:nth-child(3){top:20px;width:15px}
+.hero{position:relative;height:80vh;min-height:550px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding-top:80px}
+.hero-img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center bottom;z-index:0}
+.hero-bg{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to bottom,rgba(0,80,130,.35),rgba(0,120,160,.25) 50%,rgba(0,150,180,.3));z-index:1}
+.hero-content{position:relative;z-index:2;text-align:center;color:#fff;padding:0 20px;text-shadow:0 2px 20px rgba(0,0,0,.3)}
+.hero-label{font-size:15px;letter-spacing:.25em;margin-bottom:25px;opacity:.95}
+.hero-title{font-size:clamp(30px,5vw,52px);font-weight:400;line-height:1.4;margin-bottom:15px;letter-spacing:.08em}
+body.has-fixed-cta{padding-bottom:80px}
+</style>
+<!-- Full CSS (deferred) -->
+<link rel="stylesheet" href="css/common.css" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="css/top.css" media="print" onload="this.media='all'">
+<noscript>
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/top.css">
+</noscript>
 <!-- Preload LCP image (Hero background) -->
 <link rel="preload" href="images/img_mv.jpg" as="image" fetchpriority="high">
 </head>
 <body class="has-fixed-cta">
+
+<!-- Skip Navigation -->
+<a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
 
 <!-- Header -->
 <header class="header">
@@ -33,12 +67,12 @@
       <span class="logo-sub">沖縄のウィークリー＆マンスリーで、日常を離れてゆったりSTAY。</span>
     </a>
     <div id="navArea">
-      <div class="toggle_btn" onclick="toggleNav()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <nav>
+      <button class="toggle_btn" onclick="toggleNav()" aria-label="メニューを開く" aria-expanded="false" aria-controls="main-nav">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+      <nav id="main-nav" aria-label="メインナビゲーション">
         <div class="inner">
           
           <div class="nav-category nav-category-primary">RESERVATION</div>
@@ -170,14 +204,16 @@
           
         </div>
       </nav>
-      <div id="mask" onclick="closeNav()"></div>
+      <div id="mask" onclick="closeNav()" aria-hidden="true"></div>
     </div>
   </div>
 </header>
 
 <!-- Hero -->
-<section class="hero">
-  <div class="hero-bg"></div>
+<main id="main-content">
+<section class="hero" role="banner" aria-label="メインビジュアル">
+  <img src="images/img_mv.jpg" alt="沖縄の美しい海と空" class="hero-img" fetchpriority="high" loading="eager" decoding="async">
+  <div class="hero-bg" aria-hidden="true"></div>
   <div class="hero-content">
     <h1 class="hero-label">沖縄ウィークリー＆マンスリー</h1>
     <h2 class="hero-title">沖縄で暮らすように、泊まる。</h2>
@@ -199,8 +235,8 @@
   <div class="featured-header">
     <h2 class="featured-title">沖縄で人気のお部屋 ›</h2>
     <div class="featured-nav">
-      <button onclick="slideLeft()" id="prevBtn">‹</button>
-      <button onclick="slideRight()" id="nextBtn">›</button>
+      <button onclick="slideLeft()" id="prevBtn" aria-label="前のスライド">‹</button>
+      <button onclick="slideRight()" id="nextBtn" aria-label="次のスライド">›</button>
     </div>
   </div>
   <div class="slider-container">
@@ -473,8 +509,8 @@
     <h2 class="cta-title">ご予約・お問い合わせ</h2>
     <p class="cta-title-en en">CONTACT & RESERVATION</p>
     <div class="cta-buttons">
-      <a href="tel:098-865-5525" class="cta-phone">
-        <span class="cta-phone-icon">📞</span>
+      <a href="tel:098-865-5525" class="cta-phone" aria-label="電話でお問い合わせ 098-865-5525">
+        <span class="cta-phone-icon" aria-hidden="true">📞</span>
         <div class="cta-phone-text">
           <div class="cta-phone-number en">098-865-5525</div>
           <div class="cta-phone-note">受付 9:00〜18:00（土日定休）</div>
@@ -486,9 +522,10 @@
     </div>
   </div>
 </section>
+</main>
 
 <!-- Footer -->
-<footer class="footer">
+<footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer-inner">
       <div class="footer-brand">
@@ -539,9 +576,9 @@
 <script src="javascript/top.js" defer></script>
 
 <!-- 固定CTAボタン -->
-<div class="fixed-cta">
+<div class="fixed-cta" role="complementary" aria-label="お問い合わせへのクイックアクセス">
   <div class="fixed-cta-inner">
-    <a href="contact.html" class="fixed-cta-btn">ご予約・お問い合わせはこちら</a>
+    <a href="contact.html" class="fixed-cta-btn" aria-label="ご予約・お問い合わせフォームへ">ご予約・お問い合わせはこちら</a>
   </div>
 </div>
 

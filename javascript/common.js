@@ -6,11 +6,27 @@
 // ハンバーガーメニュー開閉
 function toggleNav() {
   const navArea = document.getElementById('navArea');
+  const toggleBtn = navArea.querySelector('.toggle_btn');
   navArea.classList.toggle('open');
+
+  // aria-expanded属性を更新（アクセシビリティ）
+  const isOpen = navArea.classList.contains('open');
+  if (toggleBtn) {
+    toggleBtn.setAttribute('aria-expanded', isOpen);
+    toggleBtn.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
+  }
 }
 
 function closeNav() {
-  document.getElementById('navArea').classList.remove('open');
+  const navArea = document.getElementById('navArea');
+  const toggleBtn = navArea.querySelector('.toggle_btn');
+  navArea.classList.remove('open');
+
+  // aria-expanded属性を更新（アクセシビリティ）
+  if (toggleBtn) {
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    toggleBtn.setAttribute('aria-label', 'メニューを開く');
+  }
 }
 
 // Room Typeドロップダウン開閉
