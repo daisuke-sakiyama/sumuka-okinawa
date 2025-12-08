@@ -1,24 +1,60 @@
-name: Auto Merge Claude PRs
+name: Auto Create and Merge Claude PRs
 
 on:
-  pull_request:
-    types: [opened, synchronize]
+  push:
+    branches:
+      - 'claude/**'
 
 jobs:
-  auto-merge:
+  create-and-merge:
     runs-on: ubuntu-latest
-    if: startsWith(github.head_ref, 'claude/')
     permissions:
       contents: write
       pull-requests: write
     steps:
-      - name: Auto merge PR
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Create and Merge PR
         uses: actions/github-script@v7
         with:
           script: |
+            const branch = context.ref.replace('refs/heads/', '');
+
+            // Check if PR already exists
+            const { data: existingPRs } = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              head: `${context.repo.owner}:${branch}`,
+              state: 'open'
+            });
+
+            let pr;
+            if (existingPRs.length > 0) {
+              pr = existingPRs[0];
+              console.log(`PR already exists: #${pr.number}`);
+            } else {
+              // Create PR
+              const { data: newPR } = await github.rest.pulls.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: `Auto merge: ${branch}`,
+                head: branch,
+                base: 'main',
+                body: 'Automatically created PR from Claude branch'
+              });
+              pr = newPR;
+              console.log(`Created PR: #${pr.number}`);
+            }
+
+            // Wait a moment for PR to be ready
+            await new Promise(resolve => setTimeout(resolve, 2000));
+
+            // Merge PR
             await github.rest.pulls.merge({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              pull_number: context.payload.pull_request.number,
+              pull_number: pr.number,
               merge_method: 'squash'
             });
+            console.log(`Merged PR: #${pr.number}`);
