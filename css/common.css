@@ -882,6 +882,14 @@ body.nav-open .fixed-cta {
   transition: opacity 0.3s;
 }
 
+/* メニュー開いた時に背景スクロールを防止 */
+body.nav-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
 @media screen and (max-width: 767px) {
   /* スマホ：スクロール時ヘッダー変化 */
   .header {

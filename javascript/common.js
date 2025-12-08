@@ -3,10 +3,21 @@
    全ページで使用
    ======================================== */
 
+// スクロール位置保存用
+let scrollPosition = 0;
+
 // ハンバーガーメニュー開閉
 function toggleNav() {
   const navArea = document.getElementById('navArea');
   const toggleBtn = navArea.querySelector('.toggle_btn');
+  const isCurrentlyOpen = navArea.classList.contains('open');
+
+  if (!isCurrentlyOpen) {
+    // メニューを開く前にスクロール位置を保存
+    scrollPosition = window.pageYOffset;
+    document.body.style.top = `-${scrollPosition}px`;
+  }
+
   navArea.classList.toggle('open');
 
   // aria-expanded属性を更新（アクセシビリティ）
@@ -16,13 +27,21 @@ function toggleNav() {
     toggleBtn.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
   }
 
-  // bodyにクラスを追加（固定CTAの表示制御用）
+  // bodyにクラスを追加（固定CTAの表示制御用・スクロール防止）
   document.body.classList.toggle('nav-open', isOpen);
+
+  if (!isOpen) {
+    // メニューを閉じた後にスクロール位置を復元
+    document.body.style.top = '';
+    window.scrollTo(0, scrollPosition);
+  }
 }
 
 function closeNav() {
   const navArea = document.getElementById('navArea');
   const toggleBtn = navArea.querySelector('.toggle_btn');
+  const wasOpen = navArea.classList.contains('open');
+
   navArea.classList.remove('open');
 
   // aria-expanded属性を更新（アクセシビリティ）
@@ -33,6 +52,12 @@ function closeNav() {
 
   // bodyからクラスを削除
   document.body.classList.remove('nav-open');
+
+  // スクロール位置を復元
+  if (wasOpen) {
+    document.body.style.top = '';
+    window.scrollTo(0, scrollPosition);
+  }
 }
 
 // Room Typeドロップダウン開閉
