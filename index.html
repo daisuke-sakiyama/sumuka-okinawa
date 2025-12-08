@@ -51,7 +51,9 @@ body.has-fixed-cta{padding-bottom:80px}
 /* 初期状態でコンテンツを非表示 */
 .page-content{opacity:0;transition:opacity .5s ease}
 .page-content.visible{opacity:1}
-@media(max-width:767px){#navArea{position:fixed;top:4%;right:7%;opacity:0;visibility:hidden}#navArea.loaded{opacity:1;visibility:visible}}
+/* MENUテキスト非表示 */
+.menu-text{display:none;font-family:'Cormorant Garamond',Georgia,serif;font-size:12px;font-weight:500;letter-spacing:.1em;color:#333}
+@media(max-width:767px){#navArea{position:fixed;top:4%;right:7%;opacity:0;visibility:hidden}#navArea.loaded{opacity:1;visibility:visible}.logo-main{font-size:16px}.header.scrolled #navArea{right:3%;background:rgba(255,255,255,.95);padding:15px 18px;border-radius:4px;border:1px solid #ccc}.header.scrolled .toggle_btn{width:auto;height:auto}.header.scrolled .toggle_btn span:not(.menu-text){display:none}.header.scrolled .menu-text{display:block;position:static}.header.scrolled #navArea.open{right:7%;background:transparent;padding:0;border-radius:0;border:none}.header.scrolled #navArea.open .toggle_btn{width:30px;height:22px}.header.scrolled #navArea.open .toggle_btn span:not(.menu-text){display:block}.header.scrolled #navArea.open .menu-text{display:none}}
 </style>
 <!-- Full CSS (deferred) -->
 <link rel="stylesheet" href="css/common.css" media="print" onload="this.media='all'">
