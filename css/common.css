@@ -906,6 +906,20 @@ body.nav-open .fixed-cta {
     transition: opacity 0.3s, visibility 0.3s;
   }
 
+  /* スクロール時：ハンバーガーボタンに白背景 */
+  .header.scrolled #navArea {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: #fff;
+    padding: 12px 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  #navArea {
+    transition: all 0.3s ease;
+  }
+
   /* 固定CTA表示制御 */
   .fixed-cta {
     padding: 10px 15px;
