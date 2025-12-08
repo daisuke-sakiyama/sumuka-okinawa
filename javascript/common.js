@@ -68,3 +68,47 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+// スクロール時のヘッダー縮小・固定CTA表示制御
+(function() {
+  const header = document.querySelector('.header');
+  const fixedCta = document.querySelector('.fixed-cta');
+  const headerScrollThreshold = 50;
+  const ctaScrollThreshold = 900;
+
+  function handleScroll() {
+    const currentScrollY = window.scrollY;
+
+    // ヘッダー縮小（全デバイス）
+    if (header) {
+      if (currentScrollY > headerScrollThreshold) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }
+
+    // 固定CTA表示制御（スマホのみ: 767px以下）
+    if (fixedCta && window.innerWidth <= 767) {
+      if (currentScrollY > ctaScrollThreshold) {
+        fixedCta.classList.add('visible');
+      } else {
+        fixedCta.classList.remove('visible');
+      }
+    }
+  }
+
+  // PCでは固定CTAを常に表示
+  function handleResize() {
+    if (fixedCta && window.innerWidth > 767) {
+      fixedCta.classList.add('visible');
+    }
+  }
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener('resize', handleResize, { passive: true });
+
+  // 初期化
+  handleScroll();
+  handleResize();
+})();
