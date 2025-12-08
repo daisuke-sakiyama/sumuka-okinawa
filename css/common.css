@@ -211,7 +211,7 @@ textarea:focus {
   right: 0;
   width: 30px;
   height: 2px;
-  background: #333;
+  background: linear-gradient(135deg, #E61E4D 0%, #D70466 100%);
   transition: all 0.5s;
 }
 
@@ -883,26 +883,29 @@ body.nav-open .fixed-cta {
 }
 
 @media screen and (max-width: 767px) {
-  /* ヘッダー縮小（スマホのみ） */
+  /* スマホ：スクロール時ヘッダー変化 */
   .header {
     transition: padding 0.3s ease;
   }
 
   .header.scrolled {
-    padding: 6px 0;
+    padding: 8px 0;
   }
 
-  .header.scrolled .logo-main {
-    font-size: 24px;
+  /* スクロール時：ロゴを非表示 */
+  .header.scrolled .logo {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
   }
 
-  .header.scrolled .logo-sub {
-    font-size: 10px;
+  .logo {
+    transition: opacity 0.3s, visibility 0.3s;
   }
 
-  .logo-main,
-  .logo-sub {
-    transition: font-size 0.3s ease;
+  /* スクロール時：ハンバーガーボタンを黒に */
+  .header.scrolled .toggle_btn span {
+    background: #333;
   }
 
   /* 固定CTA表示制御 */
