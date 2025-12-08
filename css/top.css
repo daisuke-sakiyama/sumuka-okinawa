@@ -7,8 +7,8 @@
   --primary-light: #2d5a6e;
   --accent: #c9a86c;
   --accent-light: #e8d4b0;
-  --text: #333;
-  --text-light: #666;
+  --text: #222;
+  --text-light: #444;
   --white: #fff;
   --bg-light: #f8f9fa;
   --bg-cream: #faf9f7;
@@ -303,7 +303,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #888;
+  color: #555;
   font-size: 12px;
   text-align: center;
 }
@@ -614,7 +614,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #888;
+  color: #555;
   font-size: 14px;
   border-radius: 12px;
 }
