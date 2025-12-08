@@ -895,11 +895,30 @@ body.nav-open {
 }
 
 @media screen and (max-width: 767px) {
-  /* スマホ：スクロール時ヘッダー変化 */
+  /* スマホ：ヘッダー */
   .header {
+    padding: 12px 15px;
     transition: padding 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
   }
 
+  /* スマホ：ロゴ横並び */
+  .logo {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+
+  .logo-main {
+    font-size: 16px;
+  }
+
+  .logo-sub {
+    font-size: 9px;
+    margin-top: 0;
+  }
+
+  /* スマホ：スクロール時ヘッダー変化 */
   .header.scrolled {
     padding: 8px 0;
     background: transparent;
@@ -911,27 +930,15 @@ body.nav-open {
   .header.scrolled .logo {
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
-  }
-
-  .logo {
-    transition: opacity 0.3s, visibility 0.3s;
-  }
-
-  .logo-main {
-    font-size: 16px;
-  }
-
-  .logo-sub {
-    font-size: 9px;
   }
 
   /* ハンバーガーボタン - 初期非表示 */
   #navArea {
     position: fixed;
-    top: 4%;
-    right: 7%;
-    transition: top 0.3s ease, right 0.3s ease, background 0.3s ease, padding 0.3s ease, border-radius 0.3s ease, border 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    transition: top 0.3s ease, right 0.3s ease, transform 0.3s ease, background 0.3s ease, padding 0.3s ease, border-radius 0.3s ease, border 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
     background: transparent;
     padding: 0;
     border-radius: 0;
@@ -948,7 +955,9 @@ body.nav-open {
 
   /* スクロール時：ハンバーガーボタンに白背景 */
   .header.scrolled #navArea {
-    right: 3%;
+    top: 15px;
+    right: 15px;
+    transform: translateY(0);
     background: white;
     padding: 12px;
     border-radius: 50%;
@@ -958,7 +967,9 @@ body.nav-open {
 
   /* メニュー開いた時：元の位置に戻す */
   .header.scrolled #navArea.open {
-    right: 7%;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
     background: transparent;
     padding: 0;
     border-radius: 0;
