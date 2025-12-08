@@ -78,10 +78,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
   function handleScroll() {
     const currentScrollY = window.scrollY;
+    const isMobile = window.innerWidth <= 767;
 
-    // ヘッダー縮小（全デバイス）
+    // ヘッダー縮小（スマホのみ: 767px以下）
     if (header) {
-      if (currentScrollY > headerScrollThreshold) {
+      if (isMobile && currentScrollY > headerScrollThreshold) {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
@@ -89,7 +90,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
 
     // 固定CTA表示制御（スマホのみ: 767px以下）
-    if (fixedCta && window.innerWidth <= 767) {
+    if (fixedCta && isMobile) {
       if (currentScrollY > ctaScrollThreshold) {
         fixedCta.classList.add('visible');
       } else {
@@ -103,6 +104,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     if (fixedCta && window.innerWidth > 767) {
       fixedCta.classList.add('visible');
     }
+    // リサイズ時にスクロール状態も再評価
+    handleScroll();
   }
 
   window.addEventListener('scroll', handleScroll, { passive: true });
