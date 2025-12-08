@@ -906,20 +906,36 @@ body.nav-open .fixed-cta {
     transition: opacity 0.3s, visibility 0.3s;
   }
 
+  /* ハンバーガーボタンのスムーズな移動 */
+  #navArea {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    transition: top 0.3s ease, right 0.3s ease, background 0.3s ease, padding 0.3s ease, border-radius 0.3s ease, border 0.3s ease;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    border: none;
+  }
+
   /* スクロール時：ハンバーガーボタンに白背景 */
   .header.scrolled #navArea {
-    position: fixed;
     top: 4%;
-    right: 0;
+    right: -1%;
     background: white;
     padding: 10px 22px 10px 10px;
     border-radius: 10%;
-    margin-right: -1%;
     border: 1px solid rgba(230, 30, 77, 0.5);
   }
 
-  #navArea {
-    transition: all 0.3s ease;
+  /* メニュー開いた時：元の位置に戻す */
+  .header.scrolled #navArea.open {
+    top: 15px;
+    right: 20px;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    border: none;
   }
 
   /* 固定CTA表示制御 */
