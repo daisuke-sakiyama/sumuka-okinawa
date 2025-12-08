@@ -10,13 +10,6 @@ let scrollPosition = 0;
 function toggleNav() {
   const navArea = document.getElementById('navArea');
   const toggleBtn = navArea.querySelector('.toggle_btn');
-  const isCurrentlyOpen = navArea.classList.contains('open');
-
-  if (!isCurrentlyOpen) {
-    // メニューを開く前にスクロール位置を保存
-    scrollPosition = window.pageYOffset;
-    document.body.style.top = `-${scrollPosition}px`;
-  }
 
   navArea.classList.toggle('open');
 
@@ -27,20 +20,14 @@ function toggleNav() {
     toggleBtn.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
   }
 
-  // bodyにクラスを追加（固定CTAの表示制御用・スクロール防止）
+  // html/bodyにクラスを追加（固定CTAの表示制御用・スクロール防止）
+  document.documentElement.classList.toggle('nav-open', isOpen);
   document.body.classList.toggle('nav-open', isOpen);
-
-  if (!isOpen) {
-    // メニューを閉じた後にスクロール位置を復元
-    document.body.style.top = '';
-    window.scrollTo(0, scrollPosition);
-  }
 }
 
 function closeNav() {
   const navArea = document.getElementById('navArea');
   const toggleBtn = navArea.querySelector('.toggle_btn');
-  const wasOpen = navArea.classList.contains('open');
 
   navArea.classList.remove('open');
 
@@ -50,14 +37,9 @@ function closeNav() {
     toggleBtn.setAttribute('aria-label', 'メニューを開く');
   }
 
-  // bodyからクラスを削除
+  // html/bodyからクラスを削除
+  document.documentElement.classList.remove('nav-open');
   document.body.classList.remove('nav-open');
-
-  // スクロール位置を復元
-  if (wasOpen) {
-    document.body.style.top = '';
-    window.scrollTo(0, scrollPosition);
-  }
 }
 
 // Room Typeドロップダウン開閉
