@@ -15,6 +15,9 @@ function toggleNav() {
     toggleBtn.setAttribute('aria-expanded', isOpen);
     toggleBtn.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
   }
+
+  // bodyにクラスを追加（固定CTAの表示制御用）
+  document.body.classList.toggle('nav-open', isOpen);
 }
 
 function closeNav() {
@@ -27,6 +30,9 @@ function closeNav() {
     toggleBtn.setAttribute('aria-expanded', 'false');
     toggleBtn.setAttribute('aria-label', 'メニューを開く');
   }
+
+  // bodyからクラスを削除
+  document.body.classList.remove('nav-open');
 }
 
 // Room Typeドロップダウン開閉

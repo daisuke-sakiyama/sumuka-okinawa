@@ -866,6 +866,13 @@ body.has-fixed-cta {
   padding-bottom: 80px;
 }
 
+/* ナビメニュー開閉時に固定CTAを非表示 */
+body.nav-open .fixed-cta {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
 @media screen and (max-width: 767px) {
   .fixed-cta {
     padding: 10px 15px;
