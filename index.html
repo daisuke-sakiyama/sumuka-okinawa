@@ -600,19 +600,22 @@ body.has-fixed-cta{padding-bottom:80px}
 
 <!-- ローディング画面制御 -->
 <script>
-window.addEventListener('load', function() {
+document.addEventListener('DOMContentLoaded', function() {
   const loadingScreen = document.getElementById('loadingScreen');
   const pageContent = document.getElementById('pageContent');
 
-  // ページコンテンツを表示
-  if (pageContent) {
-    pageContent.classList.add('visible');
-  }
+  // DOMが準備できたらすぐにコンテンツを表示（リソースの完全読み込みを待たない）
+  requestAnimationFrame(function() {
+    // ページコンテンツを表示
+    if (pageContent) {
+      pageContent.classList.add('visible');
+    }
 
-  // ローディング画面を非表示
-  if (loadingScreen) {
-    loadingScreen.classList.add('hidden');
-  }
+    // ローディング画面を非表示
+    if (loadingScreen) {
+      loadingScreen.classList.add('hidden');
+    }
+  });
 });
 </script>
 
