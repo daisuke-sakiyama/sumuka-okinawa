@@ -115,3 +115,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   handleScroll();
   handleResize();
 })();
+
+// ページ読み込み後にハンバーガーボタンを表示
+window.addEventListener('load', function() {
+  const navArea = document.getElementById('navArea');
+  if (navArea) {
+    navArea.classList.add('loaded');
+  }
+});
