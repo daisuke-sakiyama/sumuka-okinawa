@@ -906,54 +906,6 @@ body.nav-open .fixed-cta {
     transition: opacity 0.3s, visibility 0.3s;
   }
 
-  /* スクロール時：ハンバーガーボタン（白背景、右端まで） */
-  .header.scrolled #navArea {
-    position: fixed;
-    top: 0;
-    right: 0;
-    background: #fff;
-    padding: 10px 20px;
-    border-radius: 0 0 0 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-  }
-
-  #navArea {
-    transition: all 0.3s ease;
-  }
-
-  .header.scrolled .toggle_btn {
-    width: 30px;
-    height: 16px;
-  }
-
-  .toggle_btn {
-    transition: all 0.3s ease;
-  }
-
-  .header.scrolled .toggle_btn span {
-    background: #333;
-    width: 30px;
-    height: 1.5px;
-  }
-
-  .header.scrolled .toggle_btn span:nth-child(1) {
-    top: 0;
-    animation: none;
-  }
-
-  .header.scrolled .toggle_btn span:nth-child(2) {
-    top: 7px;
-    width: 30px;
-    animation: none;
-  }
-
-  .header.scrolled .toggle_btn span:nth-child(3) {
-    top: 14px;
-    width: 30px;
-    animation: none;
-  }
-
   /* 固定CTA表示制御 */
   .fixed-cta {
     padding: 10px 15px;
