@@ -10,6 +10,21 @@ let scrollPosition = 0;
 function toggleNav() {
   const navArea = document.getElementById('navArea');
   const toggleBtn = navArea.querySelector('.toggle_btn');
+  const isCurrentlyOpen = navArea.classList.contains('open');
+
+  if (!isCurrentlyOpen) {
+    // メニューを開く前にスクロール位置を保存
+    scrollPosition = window.scrollY;
+    document.body.style.top = `-${scrollPosition}px`;
+    document.body.style.position = 'fixed';
+    document.body.style.width = '100%';
+  } else {
+    // メニューを閉じる時にスクロール位置を復元
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    window.scrollTo(0, scrollPosition);
+  }
 
   navArea.classList.toggle('open');
 
@@ -28,6 +43,12 @@ function toggleNav() {
 function closeNav() {
   const navArea = document.getElementById('navArea');
   const toggleBtn = navArea.querySelector('.toggle_btn');
+
+  // メニューを閉じる時にスクロール位置を復元
+  document.body.style.position = '';
+  document.body.style.top = '';
+  document.body.style.width = '';
+  window.scrollTo(0, scrollPosition);
 
   navArea.classList.remove('open');
 
