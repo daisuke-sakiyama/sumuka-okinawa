@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SUMUKA沖縄ウィークリー・マンスリーマンションのよくある質問。ご予約・料金・設備などについてお答えします。">
+<title>よくある質問 - SUMUKA沖縄ウィークリー・マンスリーマンション</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/common.css">
+<style>
+.page-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 20px 80px;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 50px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #eee;
+}
+
+.page-header-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  color: #E61E4D;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.page-header h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #222;
+}
+
+.faq-category {
+  margin-bottom: 40px;
+}
+
+.faq-category-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 20px;
+  padding-left: 15px;
+  border-left: 3px solid #E61E4D;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 18px 50px 18px 20px;
+  background: #fff;
+  border: none;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 500;
+  color: #222;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s;
+}
+
+.faq-question:hover {
+  background: #f8f8f8;
+}
+
+.faq-question::before {
+  content: 'Q.';
+  color: #E61E4D;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #999;
+  transition: transform 0.3s;
+}
+
+.faq-item.active .faq-question::after {
+  content: '−';
+}
+
+.faq-answer {
+  display: none;
+  padding: 0 20px 20px 45px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #444;
+  background: #f8f8f8;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+.faq-answer::before {
+  content: 'A.';
+  color: #E61E4D;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.contact-box {
+  background: linear-gradient(135deg, #f8f8f8 0%, #fff 100%);
+  padding: 30px;
+  border-radius: 12px;
+  margin-top: 50px;
+  text-align: center;
+  border: 1px solid #eee;
+}
+
+.contact-box p {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: #E61E4D;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.contact-btn:hover {
+  background: #d11843;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 40px;
+  padding: 12px 24px;
+  background: #222;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.back-link:hover {
+  background: #E61E4D;
+}
+</style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="header">
+<div class="header-inner">
+<a href="index.html" class="logo">
+  <span class="logo-main">SUMUKA</span>
+  <span class="logo-sub">沖縄のウィークリー＆マンスリーで、日常を離れてゆったりSTAY。</span>
+</a>
+<div id="navArea">
+  <div class="toggle_btn" onclick="toggleNav()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav>
+    <div class="inner">
+      <div class="nav-category nav-category-primary">RESERVATION</div>
+      <div class="nav-main-btn">
+        <a href="contact.html">
+          <span class="btn-icon">📩</span>
+          <span>ご予約</span>
+        </a>
+      </div>
+      <hr class="nav-divider">
+      <div class="nav-category">AREA</div>
+      <ul class="nav-list">
+        <li><a href="areas/naha-area.html" onclick="closeNav()"><span class="arrow-icon">→</span>那覇エリア</a></li>
+        <li><a href="areas/urasoe-area.html" onclick="closeNav()"><span class="arrow-icon">→</span>浦添エリア</a></li>
+        <li><a href="areas/nago-area.html" onclick="closeNav()"><span class="arrow-icon">→</span>名護エリア</a></li>
+      </ul>
+      <hr class="nav-divider">
+      <a href="properties/" class="nav-properties-link" onclick="closeNav()">
+        <span class="nav-properties-arrow">←</span>
+        <span class="nav-properties-icon">🏠</span>
+        <span>物件一覧</span>
+      </a>
+      <a href="index.html" class="nav-back-home" onclick="closeNav()">
+        <span>←</span>
+        <span>トップページに戻る</span>
+      </a>
+    </div>
+  </nav>
+  <div id="mask" onclick="closeNav()"></div>
+</div>
+</div>
+</header>
+
+<div class="page-container">
+  <div class="page-header">
+    <p class="page-header-label">FAQ</p>
+    <h1>よくある質問</h1>
+  </div>
+
+  <div class="faq-category">
+    <h2 class="faq-category-title">ご予約について</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">予約はどのくらい前からできますか？</button>
+      <div class="faq-answer">ご予約は3ヶ月前から承っております。繁忙期（7〜9月、年末年始、ゴールデンウィーク）は早めのご予約をおすすめいたします。</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">最短何日から利用できますか？</button>
+      <div class="faq-answer">最短1週間（7泊）からご利用いただけます。それより短い期間をご希望の場合はお問い合わせください。</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">予約のキャンセルはできますか？</button>
+      <div class="faq-answer">はい、キャンセル可能です。入居日7日前までは無料、6〜3日前は30%、2日前〜前日は50%、当日は100%のキャンセル料が発生します。詳しくは利用規約をご確認ください。</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">利用期間の延長はできますか？</button>
+      <div class="faq-answer">空室状況により延長可能です。延長をご希望の場合は、退去予定日の1週間前までにご連絡ください。</div>
+    </div>
+  </div>
+
+  <div class="faq-category">
+    <h2 class="faq-category-title">料金・お支払いについて</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">料金には何が含まれていますか？</button>
+      <div class="faq-answer">賃料には管理費・共益費が含まれております。水道・光熱費、インターネット利用料は物件により異なります。詳細は各物件ページをご確認ください。</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">保証金は必要ですか？</button>
+      <div class="faq-answer">はい、ご入居時に保証金をお預かりしております。退去時にクリーニング費用等を差し引いて返金いたします。金額は物件により異なります。</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">支払い方法を教えてください</button>
+      <div class="faq-answer">銀行振込でのお支払いとなります。ご契約時に初月分の賃料と保証金をお振込みいただきます。</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">長期割引はありますか？</button>
+      <div class="faq-answer">はい、1ヶ月以上のご利用で長期割引が適用されます。期間が長いほどお得な料金でご利用いただけます。詳細はお問い合わせください。</div>
+    </div>
+  </div>
+
+  <div class="faq-category">
+    <h2 class="faq-category-title">設備・サービスについて</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">家具・家電は備え付けですか？</button>
+      <div class="faq-answer">はい、すべての物件にベッド、テレビ、冷蔵庫、洗濯機、電子レンジ、エアコン、基本的な調理器具などが備わっております。詳細は各物件ページをご確認ください。</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">インターネットは使えますか？</button>
+      <div class="faq-answer">はい、全物件でWi-Fiをご利用いただけます。追加料金なしで、入居日からすぐにお使いいただけます。</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">駐車場はありますか？</button>
+      <div class="faq-answer">物件により異なります。敷地内駐車場のある物件もございます。詳細は各物件ページをご確認いただくか、お問い合わせください。</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">清掃サービスはありますか？</button>
+      <div class="faq-answer">定期清掃サービスはございませんが、ご希望により有料で手配可能です。お問い合わせください。</div>
+    </div>
+  </div>
+
+  <div class="faq-category">
+    <h2 class="faq-category-title">入居・退去について</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">入居手続きに必要なものは？</button>
+      <div class="faq-answer">ご本人確認書類（運転免許証、パスポート、マイナンバーカードなど）をご持参ください。法人契約の場合は別途書類が必要です。</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">入居・退去の時間は決まっていますか？</button>
+      <div class="faq-answer">入居は10:00〜17:00の間にお願いしております。退去時間は契約書に記載の時間となります。時間外をご希望の場合は事前にご相談ください。</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">退去時の清掃は必要ですか？</button>
+      <div class="faq-answer">簡単な清掃とゴミの処理をお願いしております。退去後のクリーニングは当社で行いますので、通常の清掃で問題ございません。</div>
+    </div>
+  </div>
+
+  <div class="faq-category">
+    <h2 class="faq-category-title">その他</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">ペットは飼えますか？</button>
+      <div class="faq-answer">申し訳ございませんが、すべての物件でペットの飼育はお断りしております。</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">喫煙はできますか？</button>
+      <div class="faq-answer">室内は全室禁煙となっております。喫煙される場合はベランダまたは指定の喫煙場所をご利用ください。</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">住民票を移せますか？</button>
+      <div class="faq-answer">1ヶ月以上のご契約の場合、住民票の異動が可能です。詳細はお問い合わせください。</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">郵便物や宅配便は届きますか？</button>
+      <div class="faq-answer">はい、通常通りお届けとなります。不在時は不在票が投函されますので、再配達をご依頼ください。</div>
+    </div>
+  </div>
+
+  <div class="contact-box">
+    <p>その他ご不明な点がございましたら、<br>お気軽にお問い合わせください。</p>
+    <a href="contact.html" class="contact-btn">
+      <span>📩</span>
+      <span>お問い合わせ</span>
+    </a>
+  </div>
+
+  <a href="index.html" class="back-link">
+    <span>←</span>
+    <span>トップページへ戻る</span>
+  </a>
+</div>
+
+<!-- フッター -->
+<footer class="footer">
+<div class="container">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">SUMUKA</div>
+      <p>沖縄ウィークリー・マンスリーマンション<br>2005年創業。那覇市・浦添市・名護市で<br>快適な沖縄滞在をサポートいたします。<br><br>〒902-0067<br>沖縄県那覇市安里2-9-9</p>
+    </div>
+    <div class="footer-links">
+      <h4>MENU</h4>
+      <div class="footer-links-grid"><a href="index.html">お部屋を探す</a>
+      <a href="index.html#stay-plans">滞在プラン</a>
+      <a href="index.html#services">サービス</a>
+      <a href="index.html#concept">コンセプト</a>
+      <a href="contact.html">お問い合わせ</a>
+    </div></div>
+    <div class="footer-links">
+      <h4>PROPERTIES</h4>
+      <div class="footer-links-grid"><a href="properties/asato.html">安里駅前</a>
+      <a href="properties/shintoshin2.html">新都心Ⅱ</a>
+      <a href="properties/shintoshin1.html">新都心Ⅰ</a>
+      <a href="properties/omoromachi.html">おもろまち</a>
+      <a href="properties/urasoe.html">浦添</a>
+      <a href="properties/nago_garden.html">名護Garden</a>
+    </div></div>
+    <div class="footer-links">
+      <h4>INFO</h4>
+      <div class="footer-links-grid"><a href="about.html">会社概要</a>
+      <a href="faq.html">よくある質問</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="terms.html">利用規約</a>
+    </div></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 SUMUKA All Rights Reserved.</p>
+    <p><a href="https://www.sumuka.jp/">www.sumuka.jp</a></p>
+  </div>
+</div>
+</footer>
+
+<script src="javascript/common.js"></script>
+<script>
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(button => {
+  button.addEventListener('click', () => {
+    const item = button.parentElement;
+    item.classList.toggle('active');
+  });
+});
+</script>
+</body>
+</html>
