@@ -79,7 +79,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // スクロール時のヘッダー縮小・固定CTA表示制御
 (function() {
   const header = document.querySelector('.header');
-  const fixedCta = document.querySelector('.fixed-cta');
   const headerScrollThreshold = 50;
   const ctaScrollThreshold = 900;
 
@@ -103,6 +102,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
 
     // 固定CTA表示制御（スマホのみ: 767px以下）
+    const fixedCta = document.querySelector('.fixed-cta');
     if (fixedCta && isMobile) {
       // 下層ページでは常に表示、トップページではスクロール後に表示
       if (!isTopPage() || currentScrollY > ctaScrollThreshold) {
@@ -115,6 +115,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
   // PCでは固定CTAを常に表示
   function handleResize() {
+    const fixedCta = document.querySelector('.fixed-cta');
     if (fixedCta && window.innerWidth > 767) {
       fixedCta.classList.add('visible');
     }
@@ -125,15 +126,27 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   window.addEventListener('scroll', handleScroll, { passive: true });
   window.addEventListener('resize', handleResize, { passive: true });
 
-  // 初期化
+  // 初期化（ヘッダーのみ）
   handleScroll();
-  handleResize();
 })();
 
-// ページ読み込み後にハンバーガーボタンを表示
+// ページ読み込み後にハンバーガーボタンと固定CTAを初期化
 window.addEventListener('load', function() {
   const navArea = document.getElementById('navArea');
   if (navArea) {
     navArea.classList.add('loaded');
+  }
+
+  // 固定CTAの初期表示設定
+  const fixedCta = document.querySelector('.fixed-cta');
+  if (fixedCta) {
+    const isMobile = window.innerWidth <= 767;
+    const path = window.location.pathname;
+    const isTopPage = path === '/' || path === '/index.html' || path.endsWith('/sumuka-okinawa/') || path.endsWith('/sumuka-okinawa/index.html');
+
+    // PCでは常に表示、スマホの下層ページでも常に表示
+    if (!isMobile || !isTopPage) {
+      fixedCta.classList.add('visible');
+    }
   }
 });
