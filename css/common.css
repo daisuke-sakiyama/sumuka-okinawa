@@ -958,7 +958,7 @@ body.nav-open {
     clip-path: polygon(30% 10%, 100% 0, 100% 85%, 30% 85%);
     border-bottom: 13px solid #000;
     border-left: 20px solid #000;
-    border-top: 7px solid #000;
+    border-top: 7px solid rgba(181, 82, 51, 1);
   }
 
   /* メニュー開いた時：元の位置に戻す */
