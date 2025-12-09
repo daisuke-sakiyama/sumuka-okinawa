@@ -83,6 +83,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   const headerScrollThreshold = 50;
   const ctaScrollThreshold = 900;
 
+  // トップページかどうかを判定
+  function isTopPage() {
+    const path = window.location.pathname;
+    return path === '/' || path === '/index.html' || path.endsWith('/sumuka-okinawa/') || path.endsWith('/sumuka-okinawa/index.html');
+  }
+
   function handleScroll() {
     const currentScrollY = window.scrollY;
     const isMobile = window.innerWidth <= 767;
@@ -98,7 +104,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
     // 固定CTA表示制御（スマホのみ: 767px以下）
     if (fixedCta && isMobile) {
-      if (currentScrollY > ctaScrollThreshold) {
+      // 下層ページでは常に表示、トップページではスクロール後に表示
+      if (!isTopPage() || currentScrollY > ctaScrollThreshold) {
         fixedCta.classList.add('visible');
       } else {
         fixedCta.classList.remove('visible');
