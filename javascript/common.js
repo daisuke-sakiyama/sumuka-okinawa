@@ -44,11 +44,13 @@ function closeNav() {
   const navArea = document.getElementById('navArea');
   const toggleBtn = navArea.querySelector('.toggle_btn');
 
-  // メニューを閉じる時にスクロール位置を復元
-  document.body.style.position = '';
-  document.body.style.top = '';
-  document.body.style.width = '';
-  window.scrollTo(0, scrollPosition);
+  // メニューが開いている場合のみスクロール位置を復元
+  if (navArea.classList.contains('open')) {
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    window.scrollTo(0, scrollPosition);
+  }
 
   navArea.classList.remove('open');
 
